@@ -1,0 +1,22 @@
+// Colors
+$main-background: #121212;
+$secondary-background: #292929;
+$white: #fff;
+$primary: #7232f2;
+$secondary: #64ffda;
+$secondary-active: #64ffda;
+$nav-height: 4.4375rem;
+
+// Fonts
+$font-family: "PT Sans", sans-serif;
+
+:root {
+  --main-background: #121212;
+  --secondary-background: #292929;
+  --white: #fff;
+  --black: #000;
+  --primary: #7232f2;
+  --secondary: #64ffda;
+  --secondary-active: rgba(100, 255, 218, 0.1);
+  --font-family: "PT Sans", sans-serif;
+}

@@ -1,0 +1,19 @@
+.ep-button {
+  border: 0.0625rem solid var(--secondary);
+  color: var(--secondary);
+  padding: 0.75rem 1rem;
+  @include simpleTransition(background-color, 0.3s, ease-in-out);
+  background-color: transparent;
+  border-radius: 0.25rem;
+
+  &:hover,
+  &:focus {
+    background-color: var(--secondary-active);
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.8;
+    box-shadow: 0 0 0.9375rem 0.3125rem var(--secondary-active);
+  }
+}

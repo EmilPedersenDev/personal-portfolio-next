@@ -1,0 +1,72 @@
+@use "sass:math";
+
+.distortion {
+  width: 100%;
+  height: 100%;
+
+  .distortion__glitch {
+    color: var(--white);
+    font-family: var(--font-family);
+    font-weight: 800;
+    position: relative;
+    font-size: 5rem;
+    line-height: 1;
+    @include respond-above(m) {
+      font-size: 6.25rem;
+    }
+    padding: 0;
+  }
+
+  .distortion__glitch::before,
+  .distortion__glitch::after {
+    padding: 0;
+    color: var(--white);
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--main-background);
+    overflow: hidden;
+    top: 0;
+  }
+
+  .distortion__glitch::before {
+    left: 0.1875rem;
+    text-shadow: -0.125rem 0 red;
+    animation-name: distortion__glitch-animation-1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse-alternate;
+  }
+
+  .distortion__glitch::after {
+    left: -0.1875rem;
+    text-shadow: -0.125rem 0 blue;
+    animation-name: glitch-animation-2;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse-alternate;
+  }
+}
+
+@keyframes glitch-animation-1 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(math.div(1, $steps)))} {
+      clip: rect(random(150) + px, 350px, random(150) + px, 0);
+    }
+  }
+}
+
+@keyframes glitch-animation-2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(math.div(1, $steps)))} {
+      clip: rect(random(150) + px, 350px, random(150) + px, 0);
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@import "./__variables";
+@import "./__mixins";
+@import "./__navbar";
+@import "./__button";
+@import "./__about";
+@import "./__distortion";
+@import "./__socials";
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+
+  &::-webkit-scrollbar {
+    width: 0.75rem;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--main-background);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border: 3px solid var(--main-background);
+    border-radius: 10px;
+  }
+
+  &:focus {
+    outline: 2px dashed var(--secondary);
+    outline-offset: 0.3125rem;
+  }
+}
+
+body {
+  background-color: var(--main-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#app {
+  min-height: 100vh;
+  position: relative;
+
+  .container {
+    padding: 0 1.5rem;
+
+    @include respond-above(s) {
+      padding: 0 6.25rem;
+    }
+    @include respond-above(m) {
+      padding: 0 9.375rem;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--white);
+  letter-spacing: 0.125rem;
+  font-weight: 200;
+}
+
+h1 {
+  letter-spacing: 0.1875rem;
+}
+
+p,
+span,
+a,
+button {
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: 0.125rem;
+  font-size: 0.8125rem;
+}
+
+a,
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+
+li {
+  list-style-type: none;
+}
