@@ -1,0 +1,95 @@
+.menu {
+  display: block;
+
+  @include respond-above(s) {
+    display: flex;
+  }
+
+  .menu__tablist {
+    flex-basis: 150px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include respond-below(s) {
+      overflow-x: auto;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      width: 100%;
+      flex-basis: auto;
+    }
+
+    .menu__item {
+      background-color: transparent;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      position: relative;
+      text-align: left;
+      width: 100%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0.0625rem;
+        background-color: var(--white);
+
+        @include respond-below(s) {
+          height: 0.0625rem;
+          width: 100%;
+          bottom: 0;
+          top: auto;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: var(--secondary-background);
+        outline: none;
+        color: var(--secondary);
+      }
+
+      &.is-active {
+        color: var(--secondary);
+
+        &::before {
+          background-color: var(--secondary);
+        }
+      }
+
+      &:active {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .menu__active-item {
+    padding: 0 2rem 0;
+    flex: 1;
+
+    @include respond-below(s) {
+      flex: auto;
+      padding-left: 0;
+    }
+
+    h3 {
+      margin-bottom: 0.2rem;
+      .company {
+        color: var(--secondary);
+        &::before {
+          content: "@";
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 1rem;
+      &:first-of-type {
+        opacity: 0.5;
+      }
+    }
+  }
+}

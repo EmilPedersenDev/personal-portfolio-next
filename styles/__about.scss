@@ -1,60 +1,64 @@
-$_about-description-font-size: clamp(1.5rem, 7vw, 2.5rem);
+#about {
+  height: 100%;
 
-.about {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @include respond-above(l) {
-    margin-right: 18.75rem;
+  .about__personal {
+    position: relative;
+    min-height: 70vh;
   }
 
-  .about__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 43.75rem;
-
-    h1 {
-      font-size: 1rem;
-      color: var(--secondary);
+  .about__info {
+    position: absolute;
+    max-width: 18.75rem;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include respond-above(s) {
+      top: 50%;
+      left: 60%;
+      transform: translate(-60%, -50%);
     }
+
     p {
-      max-width: 33.75rem;
-      width: 100%;
+      margin-top: 1.875rem;
       line-height: 1.5;
-      font-size: 1rem;
-      opacity: 0.8;
+      letter-spacing: 0.125rem;
+      font-size: clamp(0.75rem, 1vw, 1rem);
     }
+    .about-image-container {
+      text-align: center;
 
-    .about__description {
-      display: flex;
-      align-items: center;
-      h3 {
-        font-size: $_about-description-font-size;
-        flex: 1;
-        flex-basis: 80%;
+      &.profile > span {
+        border-radius: 50%;
       }
 
-      .Typewriter {
-        display: inline-block;
-        margin-left: clamp(0.125rem, 2vw, 0.75rem);
+      &.fish {
+        position: absolute;
+        display: none;
+        opacity: 0.05;
+        top: -20%;
+        left: -30%;
+        transform: translate(-30%, -20%);
 
-        .Typewriter__wrapper {
-          font-size: $_about-description-font-size;
-          color: var(--secondary);
-        }
-
-        .Typewriter__cursor {
-          font-size: $_about-description-font-size;
+        @include respond-above(s) {
+          display: block;
         }
       }
-    }
 
-    .about__name {
-      display: flex;
+      &.gengar {
+        position: absolute;
+        bottom: 50%;
+        right: 50%;
+        transform: translate(50%, 50%);
+        opacity: 0.03;
+
+        @include respond-above(s) {
+          bottom: -60px;
+          right: -50px;
+          transform: translate(50px, 60px);
+        }
+      }
     }
   }
 }

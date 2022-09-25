@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Landing from "../layout/landing";
+import About from "../layout/about";
+import Work from "../layout/work";
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +22,8 @@ const Home: NextPage = () => {
 
       <main>
         <Landing />
+        <About />
+        <Work />
       </main>
     </>
   );

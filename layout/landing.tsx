@@ -2,15 +2,15 @@ import type { NextPage } from "next";
 import Distortion from "../components/distortion";
 import Typewriter from "typewriter-effect";
 
-const About: NextPage = () => {
+const Landing: NextPage = () => {
   return (
-    <div className="about">
-      <div className="about__wrapper">
+    <section className="landing">
+      <div className="landing__wrapper">
         <h1>Hello there!</h1>
-        <div className="about__name">
+        <div className="landing__name">
           <span>I&#39;m</span> <Distortion text="EMIL" />
         </div>
-        <div className="about__description">
+        <div className="landing__description">
           <h3>
             I make apps in
             <Typewriter
@@ -29,8 +29,8 @@ const About: NextPage = () => {
           voluptatibus doloremque ipsam iusto enim!
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default About;
+export default Landing;

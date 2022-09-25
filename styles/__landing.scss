@@ -1,0 +1,60 @@
+$_about-description-font-size: clamp(1.5rem, 7vw, 2.5rem);
+
+.landing {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include respond-above(l) {
+    margin-right: 18.75rem;
+  }
+
+  .landing__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: var(--max-width-left-placement);
+
+    h1 {
+      font-size: 1rem;
+      color: var(--secondary);
+    }
+    p {
+      max-width: 33.75rem;
+      width: 100%;
+      line-height: 1.5;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .landing__description {
+      display: flex;
+      align-items: center;
+      h3 {
+        font-size: $_about-description-font-size;
+        flex: 1;
+        flex-basis: 80%;
+      }
+
+      .Typewriter {
+        display: inline-block;
+        margin-left: clamp(0.125rem, 2vw, 0.75rem);
+
+        .Typewriter__wrapper {
+          font-size: $_about-description-font-size;
+          color: var(--secondary);
+        }
+
+        .Typewriter__cursor {
+          font-size: $_about-description-font-size;
+        }
+      }
+    }
+
+    .landing__name {
+      display: flex;
+    }
+  }
+}
