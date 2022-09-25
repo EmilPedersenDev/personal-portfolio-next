@@ -1,5 +1,6 @@
 $_list-item-margin: 1rem;
 $_list-item-line-height: 70px;
+$_list-item-transition: all, 0.3s, ease;
 
 .socials {
   position: fixed;
@@ -10,7 +11,7 @@ $_list-item-line-height: 70px;
     flex-direction: column;
     .socials__list-item {
       padding-bottom: $_list-item-margin;
-      @include simpleTransition(0.3s);
+      @include simpleTransition($_list-item-transition);
       cursor: pointer;
 
       &:hover,
@@ -26,9 +27,9 @@ $_list-item-line-height: 70px;
       }
 
       a {
-        @include simpleTransition(0.3s);
+        @include simpleTransition($_list-item-transition);
         i {
-          @include simpleTransition(0.2s);
+          @include simpleTransition(all, 0.2s);
           font-size: 1.5rem;
           opacity: 0.7;
         }

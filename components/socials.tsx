@@ -1,6 +1,6 @@
 const Socials = () => {
   return (
-    <div className="socials">
+    <aside className="socials">
       <ul className="socials__list">
         <li className="socials__list-item">
           <a
@@ -21,7 +21,7 @@ const Socials = () => {
           </a>
         </li>
       </ul>
-    </div>
+    </aside>
   );
 };
 

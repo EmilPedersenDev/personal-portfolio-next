@@ -2,9 +2,12 @@
 @import "./__mixins";
 @import "./__navbar";
 @import "./__button";
+@import "./__landing";
 @import "./__about";
 @import "./__distortion";
 @import "./__socials";
+@import "./__work";
+@import "./__menu";
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 * {
@@ -20,7 +23,7 @@
     background-color: var(--main-background);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: var(--primary);
+    background-color: var(--secondary-background);
     border: 3px solid var(--main-background);
     border-radius: 10px;
   }
@@ -63,8 +66,30 @@ h4 {
   font-weight: 200;
 }
 
-h1 {
+h1,
+h2 {
   letter-spacing: 0.1875rem;
+}
+
+h2 {
+  &.section-header {
+    position: relative;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    &::before {
+      content: "";
+      width: 3.125rem;
+      background: $secondary;
+      height: 0.5px;
+      top: 50%;
+      transform: translateY(-50%);
+      position: static;
+      display: block;
+    }
+  }
 }
 
 p,
@@ -75,6 +100,11 @@ button {
   line-height: 1;
   letter-spacing: 0.125rem;
   font-size: 0.8125rem;
+}
+
+p {
+  line-height: 1.5;
+  opacity: 0.8;
 }
 
 a,

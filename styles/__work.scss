@@ -1,0 +1,25 @@
+#work {
+  padding-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include respond-above(l) {
+    margin-right: 18.75rem;
+  }
+  h2 {
+    margin-bottom: 6rem;
+    max-width: var(--max-width-left-placement);
+    width: 100%;
+  }
+
+  .work__summary {
+    max-width: var(--max-width-left-placement);
+    width: 100%;
+
+    .menu {
+      width: 100%;
+    }
+  }
+}

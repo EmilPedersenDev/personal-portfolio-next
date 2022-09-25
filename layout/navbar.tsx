@@ -22,57 +22,63 @@ const Navbar: NextPage<NavBarProps> = ({
   };
 
   return (
-    <nav id="nav">
-      <div className="left-nav">
-        <Image
-          src={appLogo}
-          alt="App logo"
-          width={30}
-          height={37}
-          quality={100}
-        />
-      </div>
-      <div className="right-nav">
-        <ul className="desktop-nav">
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-          <li>
-            <Button text="Resume" click={showResume} />
-          </li>
-        </ul>
-        <div className="mobile-nav" onClick={toggleMobileNav}>
-          <div
-            className={`mobile-nav__hamburger ${isMobileNavOpen && "open"}`}
+    <header>
+      <nav id="nav">
+        <div className="left-nav">
+          <Image
+            src={appLogo}
+            alt="App logo"
+            width={30}
+            height={37}
+            quality={100}
           />
         </div>
-      </div>
-      <div className={`mobile-nav-overlay ${isMobileNavOpen && "open"}`}>
-        <ul className="mobile-nav-overlay__links">
-          <li>
-            <a href="#about" onClick={onMobileNavClick} tabIndex={tabindex}>
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#projects" onClick={onMobileNavClick} tabIndex={tabindex}>
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick={onMobileNavClick} tabIndex={tabindex}>
-              Contact
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+        <div className="right-nav">
+          <ul className="desktop-nav">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+            <li>
+              <Button text="Resume" click={showResume} />
+            </li>
+          </ul>
+          <div className="mobile-nav" onClick={toggleMobileNav}>
+            <div
+              className={`mobile-nav__hamburger ${isMobileNavOpen && "open"}`}
+            />
+          </div>
+        </div>
+        <div className={`mobile-nav-overlay ${isMobileNavOpen && "open"}`}>
+          <ul className="mobile-nav-overlay__links">
+            <li>
+              <a href="#about" onClick={onMobileNavClick} tabIndex={tabindex}>
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                onClick={onMobileNavClick}
+                tabIndex={tabindex}
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#contact" onClick={onMobileNavClick} tabIndex={tabindex}>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
   );
 };
 

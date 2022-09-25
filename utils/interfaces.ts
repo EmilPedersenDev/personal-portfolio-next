@@ -14,3 +14,15 @@ export interface NavBarProps {
 export interface distortionProps {
   text: string;
 }
+
+export interface Employment {
+  id: number;
+  title: string;
+  company: string;
+  duration: string;
+  summary: string;
+}
+
+export interface MenuProps {
+  menuItems: Employment[];
+}
