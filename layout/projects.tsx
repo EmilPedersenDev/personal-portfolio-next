@@ -1,7 +1,7 @@
-import React from "react";
+import type { NextPage } from "next";
 
-function projects() {
+const Project: NextPage = () => {
   return <div>projects</div>;
-}
+};
 
-export default projects;
+export default Project;

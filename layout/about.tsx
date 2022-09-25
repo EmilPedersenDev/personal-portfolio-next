@@ -1,10 +1,10 @@
-import React from "react";
+import type { NextPage } from "next";
 import Image from "next/image";
 import gengar from "../public/images/gengar.svg";
 import profile from "../public/images/profil.jpg";
 import fish from "../public/images/fish.png";
 
-function about() {
+const About: NextPage = () => {
   return (
     <section id="about">
       <div className="about__personal">
@@ -52,6 +52,6 @@ function about() {
       </div>
     </section>
   );
-}
+};
 
-export default about;
+export default About;

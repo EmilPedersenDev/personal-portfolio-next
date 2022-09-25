@@ -1,8 +1,8 @@
-import React from "react";
+import type { NextPage } from "next";
 import Menu from "../components/menu";
 import { work } from "../utils/data";
 
-function Work() {
+const Work: NextPage = () => {
   return (
     <section id="work">
       <h2 className="section-header work__header">Work</h2>
@@ -11,6 +11,6 @@ function Work() {
       </div>
     </section>
   );
-}
+};
 
 export default Work;
