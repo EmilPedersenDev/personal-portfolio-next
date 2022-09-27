@@ -24,12 +24,16 @@
   }
   &::-webkit-scrollbar-thumb {
     background-color: var(--secondary-background);
-    border: 3px solid var(--main-background);
-    border-radius: 10px;
+    border: 0.1875rem solid var(--main-background);
+    border-radius: 0.625rem;
+
+    @include respond-below(s) {
+      border-width: 0.34375rem;
+    }
   }
 
   &:focus {
-    outline: 2px dashed var(--secondary);
+    outline: 0.125rem dashed var(--secondary);
     outline-offset: 0.3125rem;
   }
 }
@@ -46,13 +50,13 @@ body {
   position: relative;
 
   .container {
-    padding: 0 1.5rem;
+    padding: 0 $container-padding-mobile + rem;
 
     @include respond-above(s) {
-      padding: 0 6.25rem;
+      padding: 0 $container-padding-tablet + rem;
     }
     @include respond-above(m) {
-      padding: 0 9.375rem;
+      padding: 0 $container-padding-desktop + rem;
     }
   }
 }
@@ -83,7 +87,7 @@ h2 {
       content: "";
       width: 3.125rem;
       background: $secondary;
-      height: 0.5px;
+      height: 0.03125rem;
       top: 50%;
       transform: translateY(-50%);
       position: static;
@@ -122,4 +126,14 @@ a {
 
 li {
   list-style-type: none;
+}
+
+i.icon {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  color: var(--white);
 }

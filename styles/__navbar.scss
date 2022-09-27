@@ -4,19 +4,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  z-index: 3;
   background-color: var(--main-background);
+  z-index: 3;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(remCalc(-80px));
+  @include simpleTransition(all, 0.5s);
+
+  @include respond-above(s) {
+    width: 100vw;
+  }
+
+  &.navbar-visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   a {
     &::after {
       content: "";
-      transition: all 0.3s ease-in-out;
+      @include simpleTransition(all, 0.5s, ease-in-out);
       position: absolute;
-      bottom: -2px;
+      bottom: remCalc(-2px);
       left: 0;
       opacity: 0;
-      height: 1px;
+      height: 0.0625rem;
       width: 0;
       background-color: var(--white);
     }
@@ -33,6 +47,7 @@
   .left-nav {
     display: flex;
     align-items: center;
+
     img {
       height: auto;
       width: 100%;
@@ -71,11 +86,13 @@
         width: 1.25rem;
         height: 0.125rem;
         border-radius: 0.3125rem;
-        background: #fff;
+        background: var(--white);
         box-shadow: 0 0.125rem 0.3125rem rgba(255, 101, 47, 0.2);
-        transition: all 0.3s ease;
+        @include simpleTransition();
+
         &.isBlackNavbar {
           background: var(--black);
+
           &::before,
           &::after {
             background: var(--black);
@@ -87,9 +104,9 @@
           position: absolute;
           width: 1.875rem;
           height: 0.125rem;
-          background: #fff;
+          background: var(--white);
           border-radius: 0.3125rem;
-          transition: all 0.3s ease;
+          @include simpleTransition();
           box-shadow: 0 0.125rem 0.3125rem rgba(255, 101, 47, 0.2);
         }
 
@@ -119,6 +136,7 @@
   }
 
   .mobile-nav-overlay {
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -129,7 +147,7 @@
     overflow: hidden;
     transform: translateX(100vw);
     opacity: 0;
-    transition: all 0.3s ease;
+    @include simpleTransition();
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,7 +159,7 @@
 
     .mobile-nav-overlay__links {
       li {
-        padding-bottom: 5px;
+        padding-bottom: remCalc(5px);
 
         &:hover {
           cursor: pointer;

@@ -3,8 +3,9 @@ import Head from "next/head";
 import Landing from "../layout/landing";
 import About from "../layout/about";
 import Work from "../layout/work";
+import Projects from "../layout/projects";
 
-const Home: NextPage = () => {
+const Home: NextPage = () => {  
   return (
     <>
       <Head>
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
         <Landing />
         <About />
         <Work />
+        <Projects />
       </main>
     </>
   );
