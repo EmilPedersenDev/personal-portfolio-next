@@ -1,25 +1,38 @@
 import type { NextPage } from "next";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { MenuProps, Employment } from "../utils/interfaces";
 import { defaultMenuState } from "../utils/data";
+import useWindowSize from "../utils/resize";
+import { cssTransform } from "../utils/interfaces";
+import { mobileWidth } from "../utils/variables";
 
 const Menu: NextPage<MenuProps> = ({ menuItems }) => {
   const [selectedMenuItem, setSelectedMenuItem] =
     useState<Employment>(defaultMenuState);
 
-  useEffect(() => {
+  const [windowWidth]: Array<number> = useWindowSize();
+
+  useEffect((): void => {
     if (menuItems && menuItems.length > 0) {
       setSelectedMenuItem(Object.assign({}, menuItems[0]));
     }
   }, []);
 
+  const activeMenuItemPos = useMemo((): cssTransform => {
+    if (windowWidth > mobileWidth) {
+      return {
+        transform: `translateY(calc(${selectedMenuItem.id - 1} * 42px))`,
+      };
+    } else {
+      return {
+        transform: `translateX(calc(${selectedMenuItem.id - 1} * 120px))`,
+      };
+    }
+  }, [selectedMenuItem, windowWidth]);
+
   const onsSelectMenuItem = (menuItem: Employment): void => {
     const newSelectedMenuItem = Object.assign({}, menuItem);
     setSelectedMenuItem(newSelectedMenuItem);
-    const tabEl = document.getElementById("tab-" + menuItem.id);
-    tabEl?.scrollIntoView({
-      behavior: "smooth",
-    });
   };
 
   return (
@@ -40,6 +53,7 @@ const Menu: NextPage<MenuProps> = ({ menuItems }) => {
             {item.company}
           </button>
         ))}
+        <div className="menu__indicator" style={activeMenuItemPos}></div>
       </div>
       <div
         className="menu__active-item"

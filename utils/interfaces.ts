@@ -6,11 +6,6 @@ export interface ButtonProps {
   click?: () => void;
 }
 
-export interface NavBarProps {
-  toggleMobileNav: () => void;
-  isMobileNavOpen: boolean;
-}
-
 export interface distortionProps {
   text: string;
 }
@@ -23,6 +18,19 @@ export interface Employment {
   summary: string;
 }
 
+export interface IconProps {
+  iconClass: string;
+}
+
+export interface cssTransform {
+  transform: string;
+}
+
 export interface MenuProps {
   menuItems: Employment[];
+}
+
+export interface NavBarProps {
+  toggleMobileNav: () => void;
+  isMobileNavOpen: boolean;
 }

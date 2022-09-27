@@ -1,4 +1,4 @@
-@function calculateRem($size) {
+@function remCalc($size) {
   $remSize: $size / 16px;
   @return #{$remSize}rem;
 }
@@ -22,8 +22,9 @@
 $breakpoints: (
   xs: 576px,
   s: 768px,
-  m: 992,
+  m: 992px,
   l: 1250px,
+  xl: 1500px,
 );
 
 @mixin respond-above($breakpoint) {

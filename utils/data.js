@@ -66,3 +66,14 @@ export const defaultMenuState = {
   duration: "",
   summary: "",
 };
+
+export const techniques = [
+  "TypeScript",
+  "Vue.js",
+  "Next.js",
+  "Node.js",
+  "Express.js",
+  "PostgreSQL",
+  "Heroku",
+  "SASS",
+];

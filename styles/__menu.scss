@@ -1,3 +1,5 @@
+$menu-button-height: remCalc(42px);
+
 .menu {
   display: block;
 
@@ -6,7 +8,9 @@
   }
 
   .menu__tablist {
-    flex-basis: 150px;
+    flex-basis: remCalc(150px);
+    position: relative;
+
     &:hover {
       cursor: pointer;
     }
@@ -20,29 +24,42 @@
       flex-basis: auto;
     }
 
+    .menu__indicator {
+      position: absolute;
+      top: 0;
+      left: remCalc(-0.3px);
+      background-color: var(--secondary);
+      height: $menu-button-height;
+      width: remCalc(2px);
+      transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+
+      @include respond-below(s) {
+        height: remCalc(1px);
+        width: remCalc(120px);
+        left: 0;
+      }
+    }
+
     .menu__item {
       background-color: transparent;
       border: none;
-      padding: 0.75rem 1.25rem;
+      padding: 0 1.25rem;
       position: relative;
       text-align: left;
       width: 100%;
+      height: $menu-button-height;
+      border-left: 0.0625rem solid var(--secondary-background);
+      border-top: none;
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 0.0625rem;
-        background-color: var(--white);
-
-        @include respond-below(s) {
-          height: 0.0625rem;
-          width: 100%;
-          bottom: 0;
-          top: auto;
-        }
+      @include respond-below(s) {
+        width: remCalc(120px);
+        min-width: remCalc(120px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        border-left: none;
+        border-top: 0.0625rem solid var(--secondary-background);
       }
 
       &:hover,
@@ -69,10 +86,15 @@
   .menu__active-item {
     padding: 0 2rem 0;
     flex: 1;
+    min-height: remCalc(200px);
 
     @include respond-below(s) {
       flex: auto;
       padding-left: 0;
+      min-height: remCalc(400px);
+    }
+    @include respond-between(s, m) {
+      min-height: remCalc(300px);
     }
 
     h3 {
