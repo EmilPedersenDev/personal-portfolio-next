@@ -16,7 +16,7 @@ const Menu: NextPage<MenuProps> = ({ menuItems }) => {
     if (menuItems && menuItems.length > 0) {
       setSelectedMenuItem(Object.assign({}, menuItems[0]));
     }
-  }, []);
+  }, [menuItems]);
 
   const activeMenuItemPos = useMemo((): cssTransform => {
     if (windowWidth > mobileWidth) {
