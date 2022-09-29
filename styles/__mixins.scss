@@ -8,6 +8,25 @@
   transition: $property $sec $effect;
 }
 
+@mixin show-element-transition($sec: 1s, $effect: ease) {
+  transition: transform $sec $effect, opacity $sec $effect;
+}
+
+@mixin hide($property: all, $sec: 1s, $effect: ease) {
+  visibility: hidden;
+  opacity: 0;
+  @include simpleTransition($property, $sec, $effect);
+  transform: translateY(5vh);
+  @content;
+}
+
+@mixin show {
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+  @content;
+}
+
 // /**
 //  * Media Query Breakpoints
 //  * These breakpoints are to be used in the External UI and Common UI to aid the

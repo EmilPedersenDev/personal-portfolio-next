@@ -6,13 +6,13 @@ const Button: NextPage<ButtonProps> = ({
   size = "default",
   type = "primary",
   disabled,
-  click,
+  onClick,
 }) => {
   return (
     <button
       className={`ep-button ${size} ${type}`}
       disabled={disabled}
-      onClick={click}
+      onClick={onClick}
     >
       {text}
     </button>

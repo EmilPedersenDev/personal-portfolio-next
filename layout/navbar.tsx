@@ -56,13 +56,7 @@ const Navbar: NextPage = () => {
     <header>
       <nav id="nav" className={navBarClass}>
         <div className="left-nav">
-          <Image
-            src={appLogo}
-            alt="App logo"
-            width={30}
-            height={37}
-            quality={100}
-          />
+          <Image src={appLogo} alt="App logo" width={30} height={37} quality={100} />
         </div>
         <div className="right-nav">
           <ul className="desktop-nav">
@@ -76,13 +70,11 @@ const Navbar: NextPage = () => {
               <a href="#contact">Contact</a>
             </li>
             <li>
-              <Button text="Resume" click={showResume} />
+              <Button text="Resume" onClick={showResume} />
             </li>
           </ul>
           <div className="mobile-nav" onClick={onToggleMobileNav}>
-            <div
-              className={`mobile-nav__hamburger ${mobileNavOpen && "open"}`}
-            />
+            <div className={`mobile-nav__hamburger ${mobileNavOpen && "open"}`} />
           </div>
         </div>
         <div className={`mobile-nav-overlay ${mobileNavOpen && "open"}`}>
@@ -93,20 +85,12 @@ const Navbar: NextPage = () => {
               </a>
             </li>
             <li>
-              <a
-                href="#projects"
-                onClick={onToggleMobileNav}
-                tabIndex={tabindex}
-              >
+              <a href="#projects" onClick={onToggleMobileNav} tabIndex={tabindex}>
                 Projects
               </a>
             </li>
             <li>
-              <a
-                href="#contact"
-                onClick={onToggleMobileNav}
-                tabIndex={tabindex}
-              >
+              <a href="#contact" onClick={onToggleMobileNav} tabIndex={tabindex}>
                 Contact
               </a>
             </li>

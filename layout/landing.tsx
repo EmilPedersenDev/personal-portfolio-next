@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
 import Distortion from "../components/distortion";
 import Typewriter from "typewriter-effect";
+import ObservableSection from "../components/observable-section";
 
 const Landing: NextPage = () => {
   return (
-    <section className="landing">
+    <ObservableSection id="landing">
       <div className="landing__wrapper">
         <h1>Hello there!</h1>
         <div className="landing__name">
@@ -23,13 +24,12 @@ const Landing: NextPage = () => {
           </h3>
         </div>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-          officia dolorem fugiat placeat eligendi consequuntur praesentium,
-          nesciunt, modi est consequatur amet! Asperiores qui omnis odio
-          voluptatibus doloremque ipsam iusto enim!
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, officia dolorem fugiat placeat eligendi
+          consequuntur praesentium, nesciunt, modi est consequatur amet! Asperiores qui omnis odio voluptatibus
+          doloremque ipsam iusto enim!
         </p>
       </div>
-    </section>
+    </ObservableSection>
   );
 };
 
