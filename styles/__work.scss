@@ -3,14 +3,19 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @include hide {
+    @include show-element-transition;
+  }
+
+  &.is-visible {
+    @include show;
+  }
 
   @include respond-above(s) {
     padding-bottom: 6rem;
     margin-bottom: remCalc(150px);
   }
-  @include respond-above(l) {
-    margin-right: 18.75rem;
-  }
+
   h2 {
     margin-bottom: 3rem;
     max-width: var(--max-width-left-placement);

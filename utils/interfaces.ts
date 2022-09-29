@@ -3,7 +3,7 @@ export interface ButtonProps {
   size?: string;
   type?: string;
   disabled?: boolean;
-  click?: () => void;
+  onClick?: () => void;
 }
 
 export interface distortionProps {
@@ -33,4 +33,28 @@ export interface MenuProps {
 export interface NavBarProps {
   toggleMobileNav: () => void;
   isMobileNavOpen: boolean;
+}
+
+export interface ObservableProps {
+  id: string;
+  children: JSX.Element | JSX.Element[] | string | string[];
+}
+
+type Link = {
+  github: string;
+  website: string;
+};
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  techniques: string[];
+  links: Link;
+  getMainLink: () => string;
+}
+
+export interface ProjectProps {
+  goToWebsite: (visibleProject: Project) => void;
+  visibleProject: Project;
 }

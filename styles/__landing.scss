@@ -1,10 +1,37 @@
 $_about-description-font-size: clamp(1.5rem, 7vw, 2.5rem);
 
-.landing {
+#landing {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: remCalc(10px);
+
+  h1,
+  .landing__name,
+  .landing__description,
+  h3,
+  p {
+    @include hide {
+      @include show-element-transition;
+    }
+  }
+
+  &.is-visible {
+    h1,
+    .landing__name,
+    .landing__description,
+    h3,
+    p {
+      @include show;
+    }
+
+    p {
+      @include show {
+        opacity: 0.8;
+      }
+    }
+  }
 
   @include respond-above(l) {
     margin-right: 18.75rem;
@@ -20,18 +47,20 @@ $_about-description-font-size: clamp(1.5rem, 7vw, 2.5rem);
     h1 {
       font-size: 1rem;
       color: var(--secondary);
+      transition-delay: 100ms;
     }
     p {
+      transition-delay: 400ms;
       max-width: 33.75rem;
       width: 100%;
       line-height: 1.5;
       font-size: 1rem;
-      opacity: 0.8;
     }
 
     .landing__description {
       display: flex;
       align-items: center;
+      transition-delay: 300ms;
       h3 {
         font-size: $_about-description-font-size;
         flex: 1;
@@ -55,6 +84,7 @@ $_about-description-font-size: clamp(1.5rem, 7vw, 2.5rem);
 
     .landing__name {
       display: flex;
+      transition-delay: 200ms;
     }
   }
 }

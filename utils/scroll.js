@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 
 const useWindowScroll = () => {
-  const [navBarVisible, setNavBarVisible] = useState(true);
+  const [navBarVisible, setNavBarVisible] = useState(false);
 
   useEffect(() => {
     let previousScrollPost = window.pageYOffset;
+    setNavBarVisible(true);
 
     function handleScroll() {
       const currentScrollPos = window.pageYOffset;

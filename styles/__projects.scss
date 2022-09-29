@@ -1,0 +1,99 @@
+#projects {
+  padding-bottom: remCalc(100px);
+  @include hide {
+    @include show-element-transition;
+  }
+  &.is-visible {
+    @include show;
+  }
+  .projects__wrapper {
+    max-width: remCalc(1000px);
+    margin: 0 auto;
+
+    .projects__header {
+      margin-bottom: 3rem;
+
+      &::before {
+        width: 6rem;
+      }
+
+      &:after {
+        content: "";
+        width: 100%;
+        background: var(--secondary);
+        height: remCalc(0.5px);
+        top: 50%;
+        transform: translateY(-50%);
+        position: static;
+        display: block;
+      }
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(remCalc(300px), 1fr));
+      gap: remCalc(10px);
+
+      li {
+        position: relative;
+        border: 1px solid var(--border-color);
+        box-shadow: var(--box-shadow);
+        min-height: remCalc(250px);
+        border-radius: remCalc(4px);
+        gap: remCalc(20px);
+        @include simpleTransition;
+        padding: 2rem 1.5rem;
+
+        &:hover {
+          transform: translateY(remCalc(-4px));
+          cursor: pointer;
+        }
+
+        .projects-item__header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          h2 {
+            justify-self: flex-start;
+            @include simpleTransition;
+          }
+
+          i {
+            color: var(--primary);
+          }
+        }
+
+        .projects-item__body {
+          margin-top: remCalc(20px);
+
+          .projects-item__techniques {
+            position: absolute;
+            bottom: remCalc(10px);
+            left: remCalc(20px);
+
+            .technique__item {
+              margin-right: 0.6rem;
+              display: inline-block;
+              font-size: 0.625rem;
+              opacity: 0.5;
+            }
+          }
+        }
+
+        .projects-item__footer {
+          position: absolute;
+          bottom: remCalc(8px);
+          right: remCalc(12px);
+          display: flex;
+          gap: remCalc(8px);
+        }
+      }
+    }
+
+    .projects__button {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+  }
+}

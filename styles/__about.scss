@@ -1,6 +1,13 @@
 #about {
   height: 100%;
   margin-bottom: 9.375rem;
+  @include hide {
+    @include show-element-transition;
+  }
+
+  &.is-visible {
+    @include show;
+  }
 
   .about__personal {
     position: relative;

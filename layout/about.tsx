@@ -4,10 +4,11 @@ import gengar from "../public/images/gengar.svg";
 import profile from "../public/images/profil.jpg";
 import fish from "../public/images/fish.png";
 import { techniques } from "../utils/data";
+import ObservableSection from "../components/observable-section";
 
 const About: NextPage = () => {
   return (
-    <section id="about">
+    <ObservableSection id="about">
       <div className="about__personal">
         <div className="about__info">
           <div className="about-image-container gengar">
@@ -72,7 +73,7 @@ const About: NextPage = () => {
           </div>
         </div>
       </div>
-    </section>
+    </ObservableSection>
   );
 };
 

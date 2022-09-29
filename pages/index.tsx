@@ -5,7 +5,7 @@ import About from "../layout/about";
 import Work from "../layout/work";
 import Projects from "../layout/projects";
 
-const Home: NextPage = () => {  
+const Home: NextPage = () => {
   return (
     <>
       <Head>
