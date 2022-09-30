@@ -1,17 +1,17 @@
 import type { NextPage } from "next";
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Button from "../components/button";
 import Socials from "../components/socials";
 import appLogo from "../public/images/ep-logo-white.png";
-import useWindowSize from "../utils/resize";
 import useWindowScroll from "../utils/scroll";
 import { mobileWidth } from "../utils/variables";
-import style from '../styles/__navbar.module.scss';
+import { WindowContext } from "../components/resizer";
+import style from "../styles/__navbar.module.scss";
 
 const Navbar: NextPage = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [windowWidth]: Array<number> = useWindowSize();
+  const windowWidth = useContext(WindowContext);
   const navbarVisible: boolean = useWindowScroll();
 
   useEffect((): void => {
@@ -56,11 +56,11 @@ const Navbar: NextPage = () => {
   return (
     <header>
       <nav id={style.nav} className={navBarClass}>
-        <div className={style['left-nav']}>
+        <div className={style["left-nav"]}>
           <Image src={appLogo} alt="App logo" width={30} height={37} quality={100} />
         </div>
-        <div className={style['right-nav']}>
-          <ul className={style['desktop-nav']}>
+        <div className={style["right-nav"]}>
+          <ul className={style["desktop-nav"]}>
             <li>
               <a href="#about">About</a>
             </li>
@@ -74,11 +74,11 @@ const Navbar: NextPage = () => {
               <Button text="Resume" onClick={showResume} />
             </li>
           </ul>
-          <div className={style['mobile-nav']} onClick={onToggleMobileNav}>
-            <div className={`${style['mobile-nav__hamburger']} ${mobileNavOpen && style.open }`} />
+          <div className={style["mobile-nav"]} onClick={onToggleMobileNav}>
+            <div className={`${style["mobile-nav__hamburger"]} ${mobileNavOpen && style.open}`} />
           </div>
         </div>
-        <div className={`${style['mobile-nav-overlay']} ${mobileNavOpen && style.open}`}>
+        <div className={`${style["mobile-nav-overlay"]} ${mobileNavOpen && style.open}`}>
           <ul className={style["mobile-nav-overlay__links"]}>
             <li>
               <a href="#about" onClick={onToggleMobileNav} tabIndex={tabindex}>

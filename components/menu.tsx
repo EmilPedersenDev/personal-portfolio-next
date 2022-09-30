@@ -1,16 +1,15 @@
 import type { NextPage } from "next";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useContext } from "react";
 import { MenuProps, Employment } from "../utils/interfaces";
 import { defaultMenuState } from "../utils/data";
-import useWindowSize from "../utils/resize";
 import { cssTransform } from "../utils/interfaces";
 import { mobileWidth } from "../utils/variables";
+import { WindowContext } from "./resizer";
 import style from "../styles/__menu.module.scss";
 
 const Menu: NextPage<MenuProps> = ({ menuItems }) => {
   const [selectedMenuItem, setSelectedMenuItem] = useState<Employment>(defaultMenuState);
-
-  const [windowWidth]: Array<number> = useWindowSize();
+  const windowWidth = useContext(WindowContext);
 
   useEffect((): void => {
     if (menuItems && menuItems.length > 0) {
