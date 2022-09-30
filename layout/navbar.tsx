@@ -7,6 +7,7 @@ import appLogo from "../public/images/ep-logo-white.png";
 import useWindowSize from "../utils/resize";
 import useWindowScroll from "../utils/scroll";
 import { mobileWidth } from "../utils/variables";
+import style from '../styles/__navbar.module.scss';
 
 const Navbar: NextPage = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -34,7 +35,7 @@ const Navbar: NextPage = () => {
   }, [mobileNavOpen]);
 
   const navBarClass = useMemo((): string => {
-    return navbarVisible || mobileNavOpen ? "navbar-visible" : "";
+    return navbarVisible || mobileNavOpen ? style["navbar-visible"] : "";
   }, [navbarVisible, mobileNavOpen]);
 
   const onToggleMobileNav = (): void => {
@@ -54,12 +55,12 @@ const Navbar: NextPage = () => {
 
   return (
     <header>
-      <nav id="nav" className={navBarClass}>
-        <div className="left-nav">
+      <nav id={style.nav} className={navBarClass}>
+        <div className={style['left-nav']}>
           <Image src={appLogo} alt="App logo" width={30} height={37} quality={100} />
         </div>
-        <div className="right-nav">
-          <ul className="desktop-nav">
+        <div className={style['right-nav']}>
+          <ul className={style['desktop-nav']}>
             <li>
               <a href="#about">About</a>
             </li>
@@ -73,12 +74,12 @@ const Navbar: NextPage = () => {
               <Button text="Resume" onClick={showResume} />
             </li>
           </ul>
-          <div className="mobile-nav" onClick={onToggleMobileNav}>
-            <div className={`mobile-nav__hamburger ${mobileNavOpen && "open"}`} />
+          <div className={style['mobile-nav']} onClick={onToggleMobileNav}>
+            <div className={`${style['mobile-nav__hamburger']} ${mobileNavOpen && style.open }`} />
           </div>
         </div>
-        <div className={`mobile-nav-overlay ${mobileNavOpen && "open"}`}>
-          <ul className="mobile-nav-overlay__links">
+        <div className={`${style['mobile-nav-overlay']} ${mobileNavOpen && style.open}`}>
+          <ul className={style["mobile-nav-overlay__links"]}>
             <li>
               <a href="#about" onClick={onToggleMobileNav} tabIndex={tabindex}>
                 About

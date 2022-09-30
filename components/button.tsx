@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { ButtonProps } from "../utils/interfaces";
+import style from '../styles/__button.module.scss';
 
 const Button: NextPage<ButtonProps> = ({
   text = "Button",
@@ -10,7 +11,7 @@ const Button: NextPage<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`ep-button ${size} ${type}`}
+      className={`${style['ep-button']} ${size} ${type}`}
       disabled={disabled}
       onClick={onClick}
     >

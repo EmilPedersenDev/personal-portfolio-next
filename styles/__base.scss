@@ -1,14 +1,5 @@
 @import "./__variables";
 @import "./__mixins";
-@import "./__navbar";
-@import "./__button";
-@import "./__landing";
-@import "./__about";
-@import "./__distortion";
-@import "./__socials";
-@import "./__work";
-@import "./__menu";
-@import "./__projects";
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 * {
@@ -51,13 +42,13 @@ body {
   position: relative;
 
   .container {
-    padding: 0 $container-padding-mobile + rem;
+    padding: 0 var(--container-padding-mobile);
 
     @include respond-above(s) {
-      padding: 0 $container-padding-tablet + rem;
+      padding: 0 var(--container-padding-tablet);
     }
     @include respond-above(m) {
-      padding: 0 $container-padding-desktop + rem;
+      padding: 0 var(--container-padding-desktop);
     }
   }
 }
@@ -87,7 +78,7 @@ h2 {
     &::before {
       content: "";
       width: 3.125rem;
-      background: $secondary;
+      background: var(--secondary);
       height: 0.03125rem;
       top: 50%;
       transform: translateY(-50%);
@@ -137,4 +128,18 @@ i.icon {
   background-position: center center;
   background-size: contain;
   color: var(--white);
+}
+
+.Typewriter {
+  display: inline-block;
+  margin-left: clamp(0.125rem, 2vw, 0.75rem);
+
+  .Typewriter__wrapper {
+    font-size: var(--shrinking-font-size);
+    color: var(--secondary);
+  }
+
+  .Typewriter__cursor {
+    font-size: var(--shrinking-font-size);
+  }
 }

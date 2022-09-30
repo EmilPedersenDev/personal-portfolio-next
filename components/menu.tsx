@@ -5,10 +5,10 @@ import { defaultMenuState } from "../utils/data";
 import useWindowSize from "../utils/resize";
 import { cssTransform } from "../utils/interfaces";
 import { mobileWidth } from "../utils/variables";
+import style from "../styles/__menu.module.scss";
 
 const Menu: NextPage<MenuProps> = ({ menuItems }) => {
-  const [selectedMenuItem, setSelectedMenuItem] =
-    useState<Employment>(defaultMenuState);
+  const [selectedMenuItem, setSelectedMenuItem] = useState<Employment>(defaultMenuState);
 
   const [windowWidth]: Array<number> = useWindowSize();
 
@@ -36,15 +36,13 @@ const Menu: NextPage<MenuProps> = ({ menuItems }) => {
   };
 
   return (
-    <div className="menu">
-      <div className="menu__tablist" role="tablist" aria-label="job tabs">
+    <div className={style.menu}>
+      <div className={style["menu__tablist"]} role="tablist" aria-label="job tabs">
         {menuItems.map((item, i) => (
           <button
             key={i}
             id={"tab-" + item.id}
-            className={`menu__item${
-              item.id === selectedMenuItem.id ? " is-active" : ""
-            }`}
+            className={`${style["menu__item"]} ${item.id === selectedMenuItem.id ? style["is-active"] : ""}`}
             role="tab"
             tabIndex={0}
             aria-selected={item.id === selectedMenuItem.id ? "true" : "false"}
@@ -53,17 +51,17 @@ const Menu: NextPage<MenuProps> = ({ menuItems }) => {
             {item.company}
           </button>
         ))}
-        <div className="menu__indicator" style={activeMenuItemPos}></div>
+        <div className={style["menu__indicator"]} style={activeMenuItemPos}></div>
       </div>
       <div
-        className="menu__active-item"
+        className={style["menu__active-item"]}
         aria-labelledby={"tab-" + selectedMenuItem.id}
         role="tabpanel"
         tabIndex={0}
       >
         <h3>
           <span> {selectedMenuItem?.title} </span>
-          <span className="company">{selectedMenuItem?.company}</span>
+          <span className={style["company"]}>{selectedMenuItem?.company}</span>
         </h3>
         <p>{selectedMenuItem?.duration}</p>
         <p>{selectedMenuItem?.summary}</p>
