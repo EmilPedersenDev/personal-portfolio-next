@@ -5,6 +5,7 @@ import ObservableSection from "../components/observable-section";
 import { projects } from "../utils/data/projects";
 import { Project } from "../utils/interfaces";
 import ProjectCard from "../layout/project";
+import style from "../styles/__projects.module.scss";
 
 const Projects: NextPage = () => {
   const numOfProjectsToShow = 6;
@@ -31,15 +32,15 @@ const Projects: NextPage = () => {
   };
 
   return (
-    <ObservableSection id="projects">
-      <div className="projects__wrapper">
-        <h2 className="section-header projects__header">Projects</h2>
-        <ul className="projects__list">
+    <ObservableSection id={style.projects} transitionClass={style["is-visible"]}>
+      <div className={style["projects__wrapper"]}>
+        <h2 className={`section-header ${style["projects__header"]}`}>Projects</h2>
+        <ul className={style["projects__list"]}>
           {visibleProjects.map((visibleProject, i) => (
             <ProjectCard goToWebsite={goToWebsite} visibleProject={visibleProject} key={i} />
           ))}
         </ul>
-        <div className="projects__button">
+        <div className={style["projects__button"]}>
           <Button text={allProjectsVisible ? "Show Less" : "Show More"} onClick={toggleProjects} />
         </div>
       </div>

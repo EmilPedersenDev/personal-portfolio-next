@@ -1,28 +1,17 @@
-// Colors
-$main-background: #121212;
-$secondary-background: #292929;
-$white: #fff;
-$primary: #7232f2;
-$secondary: #64ffda;
-$secondary-active: #64ffda;
-$nav-height: 4.4375rem;
-$container-padding-mobile: 1.5;
-$container-padding-tablet: 6.25;
-$container-padding-desktop: 9.375;
-
-// Fonts
-$font-family: "PT Sans", sans-serif;
-
 :root {
-  --main-background: #121212;
-  --secondary-background: #292929;
-  --white: #fff;
   --black: #000;
-  --primary: #bb86fc;
-  --secondary: #64ffda;
-  --secondary-active: rgba(100, 255, 218, 0.1);
   --border-color: #2d2d2d;
   --box-shadow: rgba(45, 45, 45, 0.2) 0px 0px 5px 3px;
+  --container-padding-mobile: 1.5rem;
+  --container-padding-tablet: 6.25rem;
+  --container-padding-desktop: 9.375rem;
   --font-family: "PT Sans", sans-serif;
+  --main-background: #121212;
   --max-width-left-placement: 43.75rem;
+  --primary: #bb86fc;
+  --secondary-background: #292929;
+  --secondary: #64ffda;
+  --secondary-active: rgba(100, 255, 218, 0.1);
+  --shrinking-font-size: clamp(1.5rem, 7vw, 2.5rem);
+  --white: #fff;
 }

@@ -37,6 +37,7 @@ export interface NavBarProps {
 
 export interface ObservableProps {
   id: string;
+  transitionClass: string,
   children: JSX.Element | JSX.Element[] | string | string[];
 }
 
