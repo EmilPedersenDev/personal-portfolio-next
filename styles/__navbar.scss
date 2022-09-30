@@ -10,7 +10,7 @@
   visibility: hidden;
   opacity: 0;
   transform: translateY(remCalc(-80px));
-  @include simpleTransition(all, 0.5s);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
 
   @include respond-above(s) {
     width: 100vw;
@@ -146,13 +146,15 @@
     z-index: 1;
     overflow: hidden;
     transform: translateX(100vw);
-    opacity: 0;
-    @include simpleTransition();
     display: flex;
     align-items: center;
     justify-content: center;
-
+    opacity: 0;
+    visibility: hidden;
+    @include simpleTransition();
+    
     &.open {
+      visibility: visible;
       transform: translateX(0);
       opacity: 1;
     }
