@@ -4,8 +4,13 @@ import Landing from "../layout/landing";
 import About from "../layout/about";
 import Work from "../layout/work";
 import Projects from "../layout/projects";
+import Socials from "../components/socials";
+import { mobileWidth } from "../utils/variables";
+import { WindowContext } from "../components/resizer";
+import { useContext } from "react";
 
 const Home: NextPage = () => {
+  const windowWidth = useContext(WindowContext);
   return (
     <>
       <Head>
@@ -20,12 +25,12 @@ const Home: NextPage = () => {
           referrerPolicy="no-referrer"
         />
       </Head>
-
       <main>
         <Landing />
         <About />
         <Work />
         <Projects />
+        {windowWidth > mobileWidth && <Socials />}
       </main>
     </>
   );

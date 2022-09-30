@@ -1,3 +1,10 @@
+type Link = {
+  github: string;
+  website: string;
+};
+
+export type ElementChild = JSX.Element | JSX.Element[] | string | string[];
+
 export interface ButtonProps {
   text: string | undefined;
   size?: string;
@@ -37,14 +44,9 @@ export interface NavBarProps {
 
 export interface ObservableProps {
   id: string;
-  transitionClass: string,
-  children: JSX.Element | JSX.Element[] | string | string[];
+  transitionClass: string;
+  children: ElementChild;
 }
-
-type Link = {
-  github: string;
-  website: string;
-};
 
 export interface Project {
   id: number;
@@ -58,4 +60,8 @@ export interface Project {
 export interface ProjectProps {
   goToWebsite: (visibleProject: Project) => void;
   visibleProject: Project;
+}
+
+export interface ResizerProps {
+  children: ElementChild;
 }
