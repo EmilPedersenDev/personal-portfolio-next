@@ -95,7 +95,7 @@ $menu-button-height: remCalc(42px);
     @include respond-below(s) {
       flex: auto;
       padding-left: 0;
-      min-height: remCalc(400px);
+      min-height: auto;
     }
     @include respond-between(s, m) {
       min-height: remCalc(300px);

@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Image from "next/image";
 import gengar from "../public/images/gengar.svg";
 import profile from "../public/images/profil.jpg";
@@ -7,9 +6,9 @@ import { techniques } from "../utils/data";
 import ObservableSection from "../components/observable-section";
 import style from "../styles/__about.module.scss";
 
-const About: NextPage = () => {
+const About = () => {
   return (
-    <ObservableSection id={style.about} transitionClass={style["is-visible"]}>
+    <ObservableSection id="about" class={style.about} transitionClass={style["is-visible"]}>
       <div className={style["about__personal"]}>
         <div className={style["about__info"]}>
           <div className={`${style["about-image-container"]} ${style.gengar}`}>

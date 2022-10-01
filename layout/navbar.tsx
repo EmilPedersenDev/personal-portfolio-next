@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import React, { useMemo, useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Button from "../components/button";
@@ -9,7 +8,7 @@ import { mobileWidth } from "../utils/variables";
 import { WindowContext } from "../components/resizer";
 import style from "../styles/__navbar.module.scss";
 
-const Navbar: NextPage = () => {
+const Navbar = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const windowWidth = useContext(WindowContext);
   const navbarVisible: boolean = useWindowScroll();
@@ -65,6 +64,9 @@ const Navbar: NextPage = () => {
               <a href="#about">About</a>
             </li>
             <li>
+              <a href="#work">Work</a>
+            </li>
+            <li>
               <a href="#projects">Projects</a>
             </li>
             <li>
@@ -83,6 +85,11 @@ const Navbar: NextPage = () => {
             <li>
               <a href="#about" onClick={onToggleMobileNav} tabIndex={tabindex}>
                 About
+              </a>
+            </li>
+            <li>
+              <a href="#work" onClick={onToggleMobileNav} tabIndex={tabindex}>
+                work
               </a>
             </li>
             <li>

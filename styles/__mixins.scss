@@ -27,6 +27,15 @@
   @content;
 }
 
+@mixin section-spacing {
+  margin-bottom: 9.375rem;
+  padding-top: 1.875rem;
+
+  @include respond-above(s) {
+    padding-top: 6.25rem;
+  }
+}
+
 // /**
 //  * Media Query Breakpoints
 //  * These breakpoints are to be used in the External UI and Common UI to aid the

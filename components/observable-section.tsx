@@ -31,7 +31,11 @@ const Observer: FC<ObservableProps> = (props) => {
     };
   }, []);
   return (
-    <section id={props.id} className={sectionVisible ? props.transitionClass : ""} ref={observerRef}>
+    <section
+      id={props.id}
+      className={`${sectionVisible ? props.transitionClass : ""} ${props.class || ""}`}
+      ref={observerRef}
+    >
       {props.children}
     </section>
   );

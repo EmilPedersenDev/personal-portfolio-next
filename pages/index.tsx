@@ -5,6 +5,7 @@ import About from "../layout/about";
 import Work from "../layout/work";
 import Projects from "../layout/projects";
 import Socials from "../components/socials";
+import Contact from "../layout/contact";
 import { mobileWidth } from "../utils/variables";
 import { WindowContext } from "../components/resizer";
 import { useContext } from "react";
@@ -30,6 +31,7 @@ const Home: NextPage = () => {
         <About />
         <Work />
         <Projects />
+        <Contact />
         {windowWidth > mobileWidth && <Socials />}
       </main>
     </>

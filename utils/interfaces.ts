@@ -44,6 +44,7 @@ export interface NavBarProps {
 
 export interface ObservableProps {
   id: string;
+  class?: string;
   transitionClass: string;
   children: ElementChild;
 }
