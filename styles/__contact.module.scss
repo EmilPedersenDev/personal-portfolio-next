@@ -2,10 +2,43 @@
 
 .contact {
   @include section-spacing;
+  margin-bottom: 0;
+  padding-bottom: 9.375rem;
   @include hide {
     @include show-element-transition;
   }
   &.is-visible {
     @include show;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .contact__wrapper {
+    width: 100%;
+    max-width: remCalc(550px);
+    text-align: center;
+
+    .contact__header {
+      margin-bottom: 2rem;
+      justify-content: center;
+
+      &::after {
+        content: "";
+        width: 3.125rem;
+        background: var(--secondary);
+        height: 0.03125rem;
+        top: 50%;
+        transform: translateY(-50%);
+        position: static;
+        display: block;
+      }
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
   }
 }
