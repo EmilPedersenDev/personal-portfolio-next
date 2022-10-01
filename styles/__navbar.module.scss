@@ -1,4 +1,4 @@
-@import './_mixins';
+@import "./_mixins";
 
 #nav {
   width: 100%;
@@ -138,6 +138,10 @@
   }
 
   .mobile-nav-overlay {
+    display: none;
+    @include respond-below(s) {
+      display: flex;
+    }
     height: 100vh;
     position: fixed;
     top: 0;
@@ -148,13 +152,12 @@
     z-index: 1;
     overflow: hidden;
     transform: translateX(100vw);
-    display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
     @include simpleTransition();
-    
+
     &.open {
       visibility: visible;
       transform: translateX(0);
