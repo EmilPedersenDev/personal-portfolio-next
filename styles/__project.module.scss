@@ -22,6 +22,10 @@
     h2 {
       justify-self: flex-start;
       @include simpleTransition;
+
+      &:hover {
+        color: var(--secondary);
+      }
     }
 
     i {
@@ -48,9 +52,9 @@
 
   .projects-item__footer {
     position: absolute;
-    bottom: remCalc(8px);
-    right: remCalc(12px);
+    bottom: 0;
+    right: 0;
     display: flex;
-    gap: remCalc(8px);
+    margin: 0 remCalc(6px) remCalc(6px) 0;
   }
 }

@@ -39,6 +39,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  padding-bottom: 2rem;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 #app {
@@ -145,5 +148,22 @@ i.icon {
 
   .Typewriter__cursor {
     font-size: var(--shrinking-font-size);
+  }
+}
+
+.icon-link {
+  padding: remCalc(6px);
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: var(--link-hover-color);
+  }
+
+  a {
+    display: inline-flex;
   }
 }
