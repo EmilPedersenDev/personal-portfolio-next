@@ -22,7 +22,6 @@ const Menu: NextPage<MenuProps> = ({ menuItems }) => {
   // when it's dektop or mobile
   useEffect(() => {
     const viewportWidth = windowWidth || window.innerWidth;
-    console.log("running the new???");
 
     if (viewportWidth > mobileWidth) {
       setMenuIndicatorTransfrom(
