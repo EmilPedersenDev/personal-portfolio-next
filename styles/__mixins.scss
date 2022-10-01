@@ -9,7 +9,7 @@
 }
 
 @mixin show-element-transition($sec: 1s, $effect: ease) {
-  transition: transform $sec $effect, opacity $sec $effect;
+  transition: transform $sec $effect, opacity $sec $effect, visibility $sec $effect;
 }
 
 @mixin hide($property: all, $sec: 1s, $effect: ease) {

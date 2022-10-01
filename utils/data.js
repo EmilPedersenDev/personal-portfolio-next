@@ -60,20 +60,23 @@ export const work = [
 ];
 
 export const defaultMenuState = {
-  id: 0,
+  id: 1,
   title: "",
   company: "",
   duration: "",
   summary: "",
 };
 
-export const techniques = [
-  "TypeScript",
-  "Vue.js",
-  "Next.js",
-  "Node.js",
-  "Express.js",
-  "PostgreSQL",
-  "Heroku",
-  "SASS",
-];
+export const techniques = ["TypeScript", "Vue.js", "Next.js", "Node.js", "Express.js", "PostgreSQL", "Heroku", "SASS"];
+
+export const menuIndicatorStyle = {
+  translateY: "translateY",
+  translateX: "translateX",
+  desktopSize: "42px",
+  mobileSize: "120px",
+};
+
+export const defaultMenuIndicator = {
+  transform: menuIndicatorStyle.translateY,
+  size: menuIndicatorStyle.desktopSize,
+};

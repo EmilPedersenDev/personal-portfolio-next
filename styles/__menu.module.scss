@@ -33,12 +33,14 @@ $menu-button-height: remCalc(42px);
       background-color: var(--secondary);
       height: $menu-button-height;
       width: remCalc(2px);
+      transform: translateX(remCalc(42px));
       transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
 
       @include respond-below(s) {
         height: remCalc(1px);
         width: remCalc(120px);
         left: 0;
+        transform: translateX(remCalc(120px));
       }
     }
 
