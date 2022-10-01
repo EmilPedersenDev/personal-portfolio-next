@@ -24,9 +24,9 @@ const Landing = () => {
           </h3>
         </div>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, officia dolorem fugiat placeat eligendi
-          consequuntur praesentium, nesciunt, modi est consequatur amet! Asperiores qui omnis odio voluptatibus
-          doloremque ipsam iusto enim!
+          I`m a Software Developer currently working <span className="company">@Refined</span>. In my everyday work I´m
+          trying to create web apps with great user experience for Refined`s customers. When I´m not working, i like to
+          build fullstack apps and to learn new exciting technologies.
         </p>
       </div>
     </ObservableSection>
