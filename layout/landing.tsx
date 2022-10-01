@@ -1,18 +1,17 @@
-import type { NextPage } from "next";
 import Distortion from "../components/distortion";
 import Typewriter from "typewriter-effect";
 import ObservableSection from "../components/observable-section";
 import style from "../styles/__landing.module.scss";
 
-const Landing: NextPage = () => {
+const Landing = () => {
   return (
-    <ObservableSection id={style.landing} transitionClass={style['is-visible']}>
-      <div className={style['landing__wrapper']}>
+    <ObservableSection id="landing" class={style.landing} transitionClass={style["is-visible"]}>
+      <div className={style["landing__wrapper"]}>
         <h1>Hello there!</h1>
-        <div className={style['landing__name']}>
+        <div className={style["landing__name"]}>
           <span>I&#39;m</span> <Distortion text="EMIL" />
         </div>
-        <div className={style['landing__description']}>
+        <div className={style["landing__description"]}>
           <h3>
             I make apps in
             <Typewriter

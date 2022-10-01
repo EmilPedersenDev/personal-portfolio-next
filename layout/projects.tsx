@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { useState } from "react";
 import Button from "../components/button";
 import ObservableSection from "../components/observable-section";
@@ -7,7 +6,7 @@ import { Project } from "../utils/interfaces";
 import ProjectCard from "../layout/project";
 import style from "../styles/__projects.module.scss";
 
-const Projects: NextPage = () => {
+const Projects = () => {
   const numOfProjectsToShow = 6;
   const defaultProjects: Array<Project> = projects.slice(0, numOfProjectsToShow);
 
@@ -32,7 +31,7 @@ const Projects: NextPage = () => {
   };
 
   return (
-    <ObservableSection id={style.projects} transitionClass={style["is-visible"]}>
+    <ObservableSection id="projects" class={style.projects} transitionClass={style["is-visible"]}>
       <div className={style["projects__wrapper"]}>
         <h2 className={`section-header ${style["projects__header"]}`}>Projects</h2>
         <ul className={style["projects__list"]}>

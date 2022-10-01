@@ -1,7 +1,7 @@
 @import "./_mixins";
 
-#projects {
-  padding-bottom: remCalc(100px);
+.projects {
+  @include section-spacing;
   @include hide {
     @include show-element-transition;
   }
@@ -35,6 +35,10 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(remCalc(300px), 1fr));
       gap: remCalc(10px);
+
+      @include respond-below(s) {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      }
     }
 
     .projects__button {

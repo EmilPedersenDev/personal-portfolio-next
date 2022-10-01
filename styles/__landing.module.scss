@@ -1,11 +1,10 @@
 @import "./_mixins";
 
-#landing {
+.landing {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: remCalc(10px);
 
   h1,
   .landing__name,

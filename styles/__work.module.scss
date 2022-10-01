@@ -1,21 +1,17 @@
 @import "./_mixins";
 
-#work {
+.work {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @include section-spacing;
   @include hide {
     @include show-element-transition;
   }
 
   &.is-visible {
     @include show;
-  }
-
-  @include respond-above(s) {
-    padding-bottom: 6rem;
-    margin-bottom: remCalc(150px);
   }
 
   h2 {

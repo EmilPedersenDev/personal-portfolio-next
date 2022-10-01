@@ -9,7 +9,7 @@ export const projects = [
     techniques: ["Next", "TypeScript", "Vercel"],
     links: {
       github: "https://github.com/EmilPedersenDev/personal-portfolio-next",
-      website: "https://personal-portfolio-next-nk8vu26ff-emilpedersendev.vercel.app/",
+      website: "https://personal-portfolio-next-pearl.vercel.app/",
     },
     getMainLink() {
       const mainLink = getProjectLink.bind(this);
@@ -20,11 +20,11 @@ export const projects = [
     id: 2,
     title: "Layout Editor",
     description:
-      "With this tool, all the Refined customers can create their own unique sites in Jira or Confluence. Lives within Refined for Cloud",
-    techniques: ["Vue", "Node", "Express"],
+      "With this tool, all the Refined customers can create their own unique sites in Jira or Confluence. Lives within Refined for Cloud.",
+    techniques: ["Vue", "Node", "Express", "Heroku"],
     links: {
       github: "",
-      website: "",
+      website: "https://marketplace.atlassian.com/apps/1218481/refined-for-jira-cloud?hosting=cloud&tab=overview",
     },
     getMainLink() {
       const mainLink = getProjectLink.bind(this);
@@ -35,8 +35,8 @@ export const projects = [
     id: 3,
     title: "Url Shortener",
     description:
-      "Providing an option for the Oatly employees to shorten all of their links and offering exporting their links as QR codes",
-    techniques: ["Next", "Node", "TypeScript"],
+      "Providing an option for the Oatly employees to shorten all of their links and offering the possibility to export their links as QR codes.",
+    techniques: ["Next", "Node", "TypeScript", "SQL"],
     links: {
       github: "",
       website: "",
@@ -52,7 +52,7 @@ export const projects = [
     description: "My old website for displaying projects and experiences i have had.",
     techniques: ["JavaScript", "Vue", "Heroku"],
     links: {
-      github: "",
+      github: "https://github.com/EmilPedersenDev/personal-portfolio",
       website: "",
     },
     getMainLink() {
@@ -62,9 +62,9 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Skanetrafiken",
-    description: "An app for buying tickets digatally for public transport. Used by travellers within Skane county.",
-    techniques: ["Vue", "c#", "JavaScript"],
+    title: "Skanetrafiken.se",
+    description: "An app for buying tickets digitally for public transport. Used by travellers within Skane county.",
+    techniques: ["Vue", "c#", "JavaScript", "Azure"],
     links: {
       github: "",
       website: "https://www.skanetrafiken.se/",
@@ -74,11 +74,11 @@ export const projects = [
       return mainLink();
     },
   },
-
   {
     id: 6,
     title: "Google Oauth2",
-    description: "Google authentication for internal Refined products.",
+    description:
+      "Google authentication for internal Refined products. Implementing Google Oauth in Node/Express and providing the employees to sign in with their Google accounts.",
     techniques: ["Node", "Express", "Oauth2"],
     links: {
       github: "",
@@ -92,11 +92,11 @@ export const projects = [
   {
     id: 7,
     title: "Theme Editor",
-    description: "Change theme to your Jira or Confluence site with this app. Lives within Refined for Cloud",
+    description: "An app integrated in all Refined products to change the theme of your Jira or Confluence site.",
     techniques: ["Vue", "Vuex", "SASS"],
     links: {
       github: "",
-      website: "",
+      website: "https://marketplace.atlassian.com/apps/1218481/refined-for-jira-cloud?hosting=cloud&tab=overview",
     },
     getMainLink() {
       const mainLink = getProjectLink.bind(this);
@@ -107,11 +107,10 @@ export const projects = [
   {
     id: 8,
     title: "DevQnect",
-    description:
-      "Connect with developers for collaborating on a open source project, or an opportunity for developers to exchange ideas.",
-    techniques: ["Vue", "MySql", "Node"],
+    description: "Connect with developers for collaboration or to exchange ideas of various software related topics.",
+    techniques: ["Vue", "MySql", "Node", "Express"],
     links: {
-      github: "",
+      github: "https://github.com/EmilPedersenDev/search-developer-fe",
       website: "",
     },
     getMainLink() {
@@ -123,8 +122,9 @@ export const projects = [
   {
     id: 9,
     title: "Redirect Service",
-    description: "Simple Node service for redirecting a shortened link to its target.",
-    techniques: ["Node", "TypeScript", "React"],
+    description:
+      "Simple Node service for redirecting a shortened link to its target. Used by Oatly employees to facilitating sharing of links.",
+    techniques: ["Node", "TypeScript", "React", "Azure"],
     links: {
       github: "",
       website: "",
@@ -137,8 +137,9 @@ export const projects = [
   {
     id: 10,
     title: "Refined Library",
-    description: "Component library for all the common components used within the products.",
-    techniques: ["Vue", "Npm", "SASS"],
+    description:
+      "Component library for all the common components used by Refined. This library is integrated in all Refined related products.",
+    techniques: ["Vue", "Npm", "SASS", "Heroku"],
     links: {
       github: "",
       website: "",
@@ -154,7 +155,7 @@ export const projects = [
     description: "Mock site showcasing the assignments and the projects the company has helped their customers with.",
     techniques: ["JavaScript", "Vue", "Vuex"],
     links: {
-      github: "",
+      github: "https://github.com/EmilPedersenDev/web-bureau",
       website: "",
     },
     getMainLink() {
@@ -166,10 +167,10 @@ export const projects = [
     id: 12,
     title: "Skiing Game",
     description: "Game released just before christmas to offer the clients a chance to win a small prize.",
-    techniques: ["Phaser", "Node", "MongoDB"],
+    techniques: ["Phaser", "Node", "MongoDB", "WebSocket"],
     links: {
       github: "",
-      website: "",
+      website: "https://github.com/EmilPedersenDev/Christmas-Game",
     },
     getMainLink() {
       const mainLink = getProjectLink.bind(this);
@@ -179,8 +180,50 @@ export const projects = [
   {
     id: 13,
     title: "Giphy App",
-    description: "Giphy randomizer",
+    description: "Giphy randomizer made for Cdon.",
     techniques: ["JavaScript", "HTML", "SASS"],
+    links: {
+      github: "https://github.com/EmilPedersenDev/giphy-app",
+      website: "https://emilpedersendev.github.io/giphy-app/",
+    },
+    getMainLink() {
+      const mainLink = getProjectLink.bind(this);
+      return mainLink();
+    },
+  },
+  {
+    id: 14,
+    title: "Skanetrafiken Companies",
+    description: "For companies to buy and manage public transport tickets used by their employees.",
+    techniques: ["Vue", "c#", "JavaScript", "Azure"],
+    links: {
+      github: "",
+      website: "https://foretag.skanetrafiken.se/",
+    },
+    getMainLink() {
+      const mainLink = getProjectLink.bind(this);
+      return mainLink();
+    },
+  },
+  {
+    id: 15,
+    title: "Skanetrafiken School",
+    description: "For school administrators to buy and manage public transport tickets used by their students.",
+    techniques: ["Vue", "c#", "JavaScript", "Azure"],
+    links: {
+      github: "",
+      website: "https://skola.skanetrafiken.se/#/",
+    },
+    getMainLink() {
+      const mainLink = getProjectLink.bind(this);
+      return mainLink();
+    },
+  },
+  {
+    id: 16,
+    title: "ImageBank",
+    description: "A simple app for managing images across all Refined related products.",
+    techniques: ["Vue", "Vuex", "JavaScript"],
     links: {
       github: "",
       website: "",

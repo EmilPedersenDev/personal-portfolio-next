@@ -1,0 +1,11 @@
+@import "./_mixins";
+
+.contact {
+  @include section-spacing;
+  @include hide {
+    @include show-element-transition;
+  }
+  &.is-visible {
+    @include show;
+  }
+}
