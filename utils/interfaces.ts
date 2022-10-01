@@ -65,3 +65,8 @@ export interface ProjectProps {
 export interface ResizerProps {
   children: ElementChild;
 }
+
+export interface MenuIndicator {
+  transform: string;
+  size: string;
+}
