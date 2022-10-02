@@ -32,7 +32,7 @@ const Home: NextPage = () => {
         <Work />
         <Projects />
         <Contact />
-        {windowWidth > mobileWidth && <Socials />}
+        {windowWidth > mobileWidth && <Socials imageSize={{ width: 16, height: 16 }} />}
       </main>
     </>
   );
