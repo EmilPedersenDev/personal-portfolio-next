@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useEffect, useContext } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import Button from "../components/button";
 import Socials from "../components/socials";
@@ -49,6 +50,7 @@ const Navbar = () => {
   }, [mobileNavOpen]);
 
   const showResume = () => {
+    window.open("https://www.linkedin.com/in/emil-pedersen-6320ab124/", "_blank");
     console.log("show resume");
   };
 
@@ -56,7 +58,11 @@ const Navbar = () => {
     <header>
       <nav id={style.nav} className={navBarClass}>
         <div className={style["left-nav"]}>
-          <Image src={appLogo} alt="App logo" width={30} height={37} quality={100} />
+          <Link href="/">
+            <a>
+              <Image src={appLogo} alt="App logo" width={30} height={37} quality={100} />
+            </a>
+          </Link>
         </div>
         <div className={style["right-nav"]}>
           <ul className={style["desktop-nav"]}>
@@ -89,7 +95,7 @@ const Navbar = () => {
             </li>
             <li>
               <a href="#work" onClick={onToggleMobileNav} tabIndex={tabindex}>
-                work
+                Work
               </a>
             </li>
             <li>
@@ -103,7 +109,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <Socials />
+          <Socials imageSize={{ width: 20, height: 20 }} />
         </div>
       </nav>
     </header>

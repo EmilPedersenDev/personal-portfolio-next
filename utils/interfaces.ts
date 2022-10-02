@@ -71,3 +71,12 @@ export interface MenuIndicator {
   transform: string;
   size: string;
 }
+
+type ImageSize = {
+  width: number;
+  height: number;
+};
+
+export interface SocialsProp {
+  imageSize: ImageSize;
+}

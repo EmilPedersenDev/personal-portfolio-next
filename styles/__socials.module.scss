@@ -28,6 +28,12 @@ $_list-item-transition: all, 0.3s, ease;
       @include simpleTransition($_list-item-transition);
       cursor: pointer;
 
+      @include respond-below(s) {
+        &:first-child {
+          margin-right: 4px;
+        }
+      }
+
       &:hover,
       &:focus {
         a {
