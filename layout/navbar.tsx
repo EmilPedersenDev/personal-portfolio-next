@@ -51,7 +51,6 @@ const Navbar = () => {
 
   const showResume = () => {
     window.open("https://www.linkedin.com/in/emil-pedersen-6320ab124/", "_blank");
-    console.log("show resume");
   };
 
   return (
