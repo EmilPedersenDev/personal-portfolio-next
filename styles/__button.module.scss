@@ -1,12 +1,19 @@
-@import './_mixins';
+@import "./_mixins";
 
 .ep-button {
   border: 0.0625rem solid var(--secondary);
   color: var(--secondary);
-  padding: 0.75rem 1rem;
   @include simpleTransition(background-color, 0.3s, ease-in-out);
   background-color: transparent;
   border-radius: 0.25rem;
+
+  &.default {
+    padding: 0.75rem 1rem;
+  }
+
+  &.small {
+    padding: 0.5rem 0.75rem;
+  }
 
   &:hover,
   &:focus {

@@ -107,6 +107,9 @@ const Navbar = () => {
                 Contact
               </a>
             </li>
+            <li>
+              <Button text="Resume" size="small" onClick={showResume} />
+            </li>
           </ul>
           <Socials imageSize={{ width: 20, height: 20 }} />
         </div>

@@ -171,8 +171,14 @@
     }
 
     .mobile-nav-overlay__links {
+      text-align: center;
+
       li {
-        padding-bottom: remCalc(5px);
+        padding-bottom: remCalc(10px);
+
+        &:last-child {
+          padding-top: remCalc(5px);
+        }
 
         &:hover {
           cursor: pointer;
