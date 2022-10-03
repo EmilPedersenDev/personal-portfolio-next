@@ -9,7 +9,7 @@ export const projects = [
     techniques: ["Next", "TypeScript", "Vercel"],
     links: {
       github: "https://github.com/EmilPedersenDev/personal-portfolio-next",
-      website: "https://personal-portfolio-next-pearl.vercel.app/",
+      website: "https://emilpedersen.tech/",
     },
     getMainLink() {
       const mainLink = getProjectLink.bind(this);
