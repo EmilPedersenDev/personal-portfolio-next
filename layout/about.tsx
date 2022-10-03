@@ -39,7 +39,7 @@ const About = () => {
             <div className={style["about__techniques"]}>
               <h3>Techniques i have used recently</h3>
               {techniques.map((technique, i) => (
-                <span key={i} className={style["techniques__item"]}>
+                <span key={i} className="technique">
                   {technique}
                 </span>
               ))}

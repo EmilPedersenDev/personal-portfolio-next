@@ -6,6 +6,10 @@
   align-items: center;
   flex-direction: column;
   @include section-spacing;
+
+  @include respond-above(s) {
+    margin-bottom: remCalc(100px);
+  }
   @include hide {
     @include show-element-transition;
   }

@@ -78,6 +78,13 @@ const Menu: NextPage<MenuProps> = ({ menuItems }) => {
         </h3>
         <p>{selectedMenuItem?.duration}</p>
         <p>{selectedMenuItem?.summary}</p>
+        <div className={style["menu__techniques"]}>
+          {selectedMenuItem.techniques.map((technique, j) => (
+            <span className="technique" key={j}>
+              {technique}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

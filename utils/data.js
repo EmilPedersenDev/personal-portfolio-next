@@ -12,6 +12,7 @@ export const work = [
         like Apple, Spotify, Facebook, Oxfam,
         Sony—plus thousands of small- and medium-size 
         businesses from more than 100 countries around the world.`,
+    techniques: ["Atlassian", "JavaScript", "Vue", "Node", "Jest", "PostgreSQL"],
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ export const work = [
         to work on web applications for Stretch's customers.
         Our development teams have created numerous enterprised 
         ready applications. `,
+    techniques: ["Azure", "JavaScript", "Vue", "React", "Node", "MongoDB"],
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ export const work = [
       The second focus area was to maintain the DevOps work within
       the Web team. The work consisted of setting up CI/CD 
       pipelines for the oatly.com site and to manage the infrastructure. `,
+    techniques: ["Azure", "Express", "JavaScript", "React", "Node", "Next", "MongoDB"],
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ export const work = [
       the company portal site, the school portal site, vouchers, 
       the "Buy Tickets" section on skanetrafiken.se and the 
       "My Account" service. `,
+    techniques: ["Azure", "JavaScript", "Vue", ".Net", "SQL"],
   },
   {
     id: 5,
@@ -56,6 +60,7 @@ export const work = [
       on JavaScript. This introduction gave us the ability to
       work as a It consultant at one of Academic Work's customers.
       My first assignment was a role as a frontend developer at Stretch.`,
+    techniques: ["JavaScript", "React", "Node", "MongoDb"],
   },
 ];
 
@@ -65,6 +70,7 @@ export const defaultMenuState = {
   company: "",
   duration: "",
   summary: "",
+  techniques: [],
 };
 
 export const techniques = ["TypeScript", "Vue.js", "Next.js", "Node.js", "Express.js", "PostgreSQL", "Heroku", "SASS"];

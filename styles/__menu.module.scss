@@ -90,7 +90,7 @@ $menu-button-height: remCalc(42px);
   .menu__active-item {
     padding: 0 2rem 0;
     flex: 1;
-    min-height: remCalc(200px);
+    min-height: remCalc(250px);
 
     @include respond-below(s) {
       flex: auto;
@@ -115,6 +115,12 @@ $menu-button-height: remCalc(42px);
       margin-bottom: 1rem;
       &:first-of-type {
         opacity: 0.5;
+      }
+    }
+
+    .menu__techniques {
+      span {
+        color: var(--secondary);
       }
     }
   }

@@ -23,6 +23,7 @@ export interface Employment {
   company: string;
   duration: string;
   summary: string;
+  techniques: string[];
 }
 
 export interface IconProps {

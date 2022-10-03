@@ -11,7 +11,7 @@ const Project = ({ goToWebsite, visibleProject }: ProjectProps) => {
   return (
     <li className={style["projects-item"]} onClick={() => goToWebsite(visibleProject)}>
       <div className={style["projects-item__header"]}>
-        <h2>{visibleProject.title}</h2>
+        <h3>{visibleProject.title}</h3>
         <Image src="/icons/code.svg" height={16} width={16} quality={100} alt="code icon" />
       </div>
       <div className={style["projects-item__body"]}>
