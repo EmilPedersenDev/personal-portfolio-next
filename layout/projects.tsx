@@ -14,17 +14,17 @@ const Projects = () => {
   const [allProjectsVisible, setAllProjectsVisible] = useState(false);
 
   const goToWebsite = (visibleProject: Project): void => {
-    const link = visibleProject.getMainLink();
+    const link: string = visibleProject.getMainLink();
     if (!link) return;
     window.open(link, "_blank");
   };
 
   const toggleProjects = (): void => {
     if (allProjectsVisible) {
-      const defaultProjects = visibleProjects.slice(0, numOfProjectsToShow);
+      const defaultProjects: Project[] = visibleProjects.slice(0, numOfProjectsToShow);
       setVisibleProjects(defaultProjects);
     } else {
-      const hiddenProjects = projects.slice(numOfProjectsToShow, projects.length);
+      const hiddenProjects: Project[] = projects.slice(numOfProjectsToShow, projects.length);
       setVisibleProjects([...visibleProjects, ...hiddenProjects]);
     }
     setAllProjectsVisible(!allProjectsVisible);

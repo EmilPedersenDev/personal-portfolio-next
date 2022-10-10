@@ -49,7 +49,7 @@ const Navbar = () => {
     return mobileNavOpen ? 0 : -1;
   }, [mobileNavOpen]);
 
-  const showResume = () => {
+  const showResume = (): void => {
     window.open("https://www.linkedin.com/in/emil-pedersen-6320ab124/", "_blank");
   };
 

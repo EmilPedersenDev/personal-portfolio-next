@@ -1,9 +1,4 @@
-type Link = {
-  github: string;
-  website: string;
-};
-
-export type ElementChild = JSX.Element | JSX.Element[] | string | string[];
+import { ElementChild, getMainLink, ImageSize, Link } from "./types";
 
 export interface ButtonProps {
   text: string | undefined;
@@ -34,8 +29,27 @@ export interface cssTransform {
   transform: string;
 }
 
+export interface MenuIndicatorStyle {
+  translateY: string;
+  translateX: string;
+  desktopSize: string;
+  mobileSize: string;
+}
+
+export interface MenuIndicator {
+  transform: string;
+  size: string;
+}
+
 export interface MenuProps {
   menuItems: Employment[];
+}
+
+export interface MenuTablistProps {
+  menuItems: Employment[];
+  selectedMenuItem: Employment;
+  selectMenuItem: (menuItem: Employment) => void;
+  activeMenuItemPos: cssTransform;
 }
 
 export interface NavBarProps {
@@ -56,7 +70,7 @@ export interface Project {
   description: string;
   techniques: string[];
   links: Link;
-  getMainLink: () => string;
+  getMainLink: getMainLink;
 }
 
 export interface ProjectProps {
@@ -67,16 +81,6 @@ export interface ProjectProps {
 export interface ResizerProps {
   children: ElementChild;
 }
-
-export interface MenuIndicator {
-  transform: string;
-  size: string;
-}
-
-type ImageSize = {
-  width: number;
-  height: number;
-};
 
 export interface SocialsProp {
   imageSize: ImageSize;

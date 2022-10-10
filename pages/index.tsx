@@ -15,13 +15,12 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Personal Portfolio - Emil Pedersen, Software Developer</title>
         <meta
           name="description"
           content="Emil Pedersen is a Software Developer who specializes in building web apps. He has professional experience within both frontend and fullstack development."
         />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta name="og:title" content="Personal Portfolio - Emil Pedersen" />
+        <meta name="og:title" content="Emil Pedersen | Personal Portfolio" />
         <meta
           name="og:image"
           content="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2338&q=80"
@@ -30,12 +29,13 @@ const Home: NextPage = () => {
           name="og:description"
           content="Emil Pedersen is a Software Developer who specializes in building web apps. He has professional experience within both frontend and fullstack development."
         />
-        <meta name="og:url" content="https://personal-portfolio-next-pearl.vercel.app/" />
+        <meta name="og:url" content="https://emilpedersen.tech/" />
         <meta
           name="keywords"
           content="HTML, CSS, JavaScript, Vue, React, Next, Node, TypeScript, PostgreSQL, MongoBD, SASS, Azure, Git, Api, Wcag, Express, Web Development, Nuxt"
         />
         <meta name="author" content="Emil Pedersen" />
+        <title>Emil Pedersen | Personal Portfolio</title>
         <link rel="icon" href="/ep-logo-white.ico" />
       </Head>
       <main>

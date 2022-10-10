@@ -1,0 +1,81 @@
+@import "./_mixins";
+
+$menu-button-height: remCalc(42px);
+
+.menu-tablist {
+  flex-basis: remCalc(150px);
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include respond-below(s) {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .menu-tablist__indicator {
+    position: absolute;
+    top: 0;
+    left: remCalc(-0.3px);
+    background-color: var(--secondary);
+    height: $menu-button-height;
+    width: remCalc(2px);
+    transform: translateX(remCalc(42px));
+    transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+
+    @include respond-below(s) {
+      height: remCalc(1px);
+      width: remCalc(120px);
+      left: 0;
+      transform: translateX(remCalc(120px));
+    }
+  }
+
+  .menu-tablist__item {
+    background-color: transparent;
+    border: none;
+    padding: 0 1.25rem;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    height: $menu-button-height;
+    border-left: 0.0625rem solid var(--secondary-background);
+    border-top: none;
+
+    @include respond-below(s) {
+      width: remCalc(120px);
+      min-width: remCalc(120px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: center;
+      border-left: none;
+      border-top: 0.0625rem solid var(--secondary-background);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--secondary-background);
+      outline: none;
+      color: var(--secondary);
+    }
+
+    &.is-active {
+      color: var(--secondary);
+
+      &::before {
+        background-color: var(--secondary);
+      }
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}

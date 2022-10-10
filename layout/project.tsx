@@ -4,7 +4,7 @@ import style from "../styles/__project.module.scss";
 import { MouseEvent } from "react";
 
 const Project = ({ goToWebsite, visibleProject }: ProjectProps) => {
-  const onAnchorClick = (e: MouseEvent<HTMLAnchorElement>) => {
+  const onAnchorClick = (e: MouseEvent<HTMLAnchorElement>): void => {
     e.stopPropagation();
   };
 

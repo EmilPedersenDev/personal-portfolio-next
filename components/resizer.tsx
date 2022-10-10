@@ -8,12 +8,12 @@ export const WindowContext = createContext(0);
 export const WindowContextProvider: React.FC<ResizerProps> = ({ children }) => {
   const [windowWidth, setWindowWidth] = useState<number>(0);
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = (): void => {
       setWindowWidth(window.innerWidth);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
-    return () => {
+    return (): void => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
