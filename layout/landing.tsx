@@ -9,7 +9,7 @@ const Landing = () => {
       <div className={style["landing__wrapper"]}>
         <h1>Hello there!</h1>
         <div className={style["landing__name"]}>
-          <span>I&#39;m</span> <Distortion text="EMIL" />
+          <span>I`m</span> <Distortion text="EMIL" />
         </div>
         <div className={style["landing__description"]}>
           <h3>
@@ -24,8 +24,8 @@ const Landing = () => {
           </h3>
         </div>
         <p>
-          I`m a Software Developer currently working <span className="company">@Refined</span>. In my everyday work I´m
-          trying to create web apps with great user experience for Refined`s customers. When I´m not working, i like to
+          I`m a Software Developer currently working <span className="company">@Refined</span>. In my everyday work I`m
+          trying to create web apps with great user experience for Refined`s customers. When I`m not working, i like to
           build fullstack apps and to learn new exciting technologies.
         </p>
       </div>

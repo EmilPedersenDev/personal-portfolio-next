@@ -3,7 +3,7 @@ import Button from "../components/button";
 import style from "../styles/__contact.module.scss";
 
 const Contact = () => {
-  const onOpenMailLink = () => {
+  const onOpenMailLink = (): void => {
     window.open("mailto:pedersen268@gmail.com");
   };
 

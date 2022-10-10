@@ -1,6 +1,8 @@
 import { getProjectLink } from "../helpers";
+import { Project } from "../interfaces";
+import { getMainLink } from "../types";
 
-export const projects = [
+export const projects: Array<Project> = [
   {
     id: 1,
     title: "Personal Portfolio",
@@ -11,8 +13,8 @@ export const projects = [
       github: "https://github.com/EmilPedersenDev/personal-portfolio-next",
       website: "https://emilpedersen.tech/",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -26,8 +28,8 @@ export const projects = [
       github: "",
       website: "https://marketplace.atlassian.com/apps/1218481/refined-for-jira-cloud?hosting=cloud&tab=overview",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -41,8 +43,8 @@ export const projects = [
       github: "",
       website: "",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -55,8 +57,8 @@ export const projects = [
       github: "https://github.com/EmilPedersenDev/personal-portfolio",
       website: "",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -69,8 +71,8 @@ export const projects = [
       github: "",
       website: "https://www.skanetrafiken.se/",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -84,8 +86,8 @@ export const projects = [
       github: "",
       website: "",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -98,8 +100,8 @@ export const projects = [
       github: "",
       website: "https://marketplace.atlassian.com/apps/1218481/refined-for-jira-cloud?hosting=cloud&tab=overview",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -113,12 +115,11 @@ export const projects = [
       github: "https://github.com/EmilPedersenDev/search-developer-fe",
       website: "",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
-
   {
     id: 9,
     title: "Redirect Service",
@@ -129,8 +130,8 @@ export const projects = [
       github: "",
       website: "",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -144,8 +145,8 @@ export const projects = [
       github: "",
       website: "",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -158,8 +159,8 @@ export const projects = [
       github: "https://github.com/EmilPedersenDev/web-bureau",
       website: "",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -172,8 +173,8 @@ export const projects = [
       github: "",
       website: "https://github.com/EmilPedersenDev/Christmas-Game",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -186,8 +187,8 @@ export const projects = [
       github: "https://github.com/EmilPedersenDev/giphy-app",
       website: "https://emilpedersendev.github.io/giphy-app/",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -200,8 +201,8 @@ export const projects = [
       github: "",
       website: "https://foretag.skanetrafiken.se/",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -214,8 +215,8 @@ export const projects = [
       github: "",
       website: "https://skola.skanetrafiken.se/#/",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },
@@ -228,8 +229,8 @@ export const projects = [
       github: "",
       website: "",
     },
-    getMainLink() {
-      const mainLink = getProjectLink.bind(this);
+    getMainLink(): string {
+      const mainLink: getMainLink = getProjectLink.bind(this);
       return mainLink();
     },
   },

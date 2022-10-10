@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState, FC } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ObservableProps } from "../utils/interfaces";
 
-const Observer: FC<ObservableProps> = (props) => {
+const Observer = (props: ObservableProps) => {
   const [sectionVisible, setSectionVisible] = useState(false);
   const observerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
+      ([entry]): void => {
         if (entry.isIntersecting) {
           setSectionVisible(true);
           observer.unobserve(entry.target);
@@ -23,7 +23,7 @@ const Observer: FC<ObservableProps> = (props) => {
       observer.observe(current);
     }
 
-    return () => {
+    return (): void => {
       if (current) {
         observer.unobserve(current);
       }

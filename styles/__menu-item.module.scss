@@ -1,0 +1,39 @@
+@import "./_mixins";
+
+.menu-item {
+  padding: 0 2rem 0;
+  flex: 1;
+  min-height: remCalc(250px);
+
+  @include respond-below(s) {
+    flex: auto;
+    padding-left: 0;
+    min-height: auto;
+  }
+  @include respond-between(s, m) {
+    min-height: remCalc(300px);
+  }
+
+  h3 {
+    margin-bottom: 0.2rem;
+    .company {
+      color: var(--secondary);
+      &::before {
+        content: "@";
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 1rem;
+    &:first-of-type {
+      opacity: 0.5;
+    }
+  }
+
+  .menu-item__techniques {
+    span {
+      color: var(--secondary);
+    }
+  }
+}
