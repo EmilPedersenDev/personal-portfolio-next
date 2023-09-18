@@ -7,18 +7,29 @@
   min-height: remCalc(250px);
   border-radius: remCalc(4px);
   gap: remCalc(20px);
-  @include simpleTransition;
   padding: 2rem 1.5rem;
 
   &:hover {
-    transform: translateY(remCalc(-4px));
-    cursor: pointer;
+    cursor: not-allowed;
+  }
+
+  &--clickable {
+    @include simpleTransition;
+
+    &:hover {
+      transform: translateY(remCalc(-4px));
+      cursor: pointer;
+    }
   }
 
   .projects-item__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .projects-item__title {
+      position: relative;
+    }
 
     h3 {
       font-size: 1.5rem;
