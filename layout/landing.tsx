@@ -16,7 +16,7 @@ const Landing = () => {
             I make apps in
             <Typewriter
               options={{
-                strings: ["Vue", "React", "Node", "Nuxt", "Next"],
+                strings: ["Vue", "Java", "Spring", "React", "Node", "Svelte", "Next"],
                 autoStart: true,
                 loop: true,
               }}
@@ -24,8 +24,8 @@ const Landing = () => {
           </h3>
         </div>
         <p>
-          I`m a Software Developer currently working <span className="company">@Refined</span>. In my everyday work I`m
-          trying to create web apps with great user experience for Refined`s customers. When I`m not working, i like to
+          I`m a Fullstack Engineer currently working <a className="company" href="https://www.refined.com/" target="_blank" rel="noreferrer">@Refined</a>. In my everyday work I`m
+          trying to create web apps with great user experience for Refined`s customers. When I`m not working, I like to
           build fullstack apps and to learn new exciting technologies.
         </p>
       </div>

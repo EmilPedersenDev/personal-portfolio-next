@@ -110,11 +110,12 @@ p {
   opacity: 0.8;
 }
 
-span {
+span, a {
   &.company {
     color: var(--secondary);
     line-height: 1.5;
     font-size: 1rem;
+    display: inline;
   }
 }
 

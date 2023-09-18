@@ -23,12 +23,8 @@ const About = () => {
           <div className={style["about__text"]}>
             <p>
               &quot;I`m a developer who thrives on challenging myself and to become better than I was yesterday. I`ve
-              spent the last for years in web development, and the creative and fast paced style of frontend is
+              spent the last four and a half years in web development, and the holistic approach of fullstack engineering is
               something that suits me well.&quot;
-            </p>
-            <p>
-              &quot;My aspirations in the near future is to pivot a bit more into the fullstack sphere. It`s something
-              that really intruiges me and i have gotten the opportunity to work more fullstack recently.&quot;
             </p>
             <p>
               &quot;When I`m not coding, It`s probably fishing, Pokemon card hunting or being out in the wild that takes
