@@ -8,18 +8,24 @@
   border-radius: remCalc(4px);
   gap: remCalc(20px);
   padding: 2rem 1.5rem;
+  transition: opacity 0.6s ease var(--transition-delay), visibility 0.6s ease var(--transition-delay), transform 0.3s ease 0s;
+  opacity: 0;
+  visibility: hidden;
 
   &:hover {
     cursor: not-allowed;
   }
 
   &--clickable {
-    @include simpleTransition;
-
     &:hover {
       transform: translateY(remCalc(-4px));
       cursor: pointer;
     }
+  }
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
   }
 
   .projects-item__header {

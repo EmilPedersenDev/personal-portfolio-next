@@ -1,13 +1,18 @@
 import Image from "next/image";
 import { ProjectProps } from "../utils/interfaces";
 import style from "../styles/__project.module.scss";
-import {MouseEvent, useState} from "react";
+import {MouseEvent, useEffect, useState} from "react";
 import Tooltip from "../components/tooltip";
 
 
-const Project = ({ goToWebsite, visibleProject }: ProjectProps) => {
+const Project = ({ goToWebsite, visibleProject, transitionDelay }: ProjectProps) => {
 
     const [showTooltip, setShowTooltip] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect((): void => {
+        setIsVisible(true);
+    }, [])
 
   const onAnchorClick = (e: MouseEvent<HTMLAnchorElement>): void => {
     e.stopPropagation();
@@ -20,7 +25,15 @@ const Project = ({ goToWebsite, visibleProject }: ProjectProps) => {
   }
 
   return (
-    <li className={`${style["projects-item"]} ${visibleProject.links.website || visibleProject.links.github ? style["projects-item--clickable"] : ''}`}
+    <li className={
+        `${style["projects-item"]} 
+        ${visibleProject.links.website || visibleProject.links.github ? style["projects-item--clickable"] : ''}
+        ${isVisible ? style["projects-item--visible"] : ""}
+        `
+    }
+        style={{
+            ["--transition-delay" as string]: transitionDelay + 'ms'
+        }}
         onClick={() => goToWebsite(visibleProject)}
         onMouseEnter={() => onHoverProjectItem(true)}
         onMouseLeave={() => onHoverProjectItem(false)}
