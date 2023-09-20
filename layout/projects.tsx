@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState} from "react";
 import Button from "../components/button";
 import ObservableSection from "../components/observable-section";
 import { projects } from "../utils/data/projects";
@@ -35,9 +35,12 @@ const Projects = () => {
       <div className={style["projects__wrapper"]}>
         <h2 className={`section-header ${style["projects__header"]}`}>Projects</h2>
         <ul className={style["projects__list"]}>
-          {visibleProjects.map((visibleProject, i) => (
-            <ProjectCard goToWebsite={goToWebsite} visibleProject={visibleProject} key={i} />
-          ))}
+          {visibleProjects.map((visibleProject, i) => {
+              const transitionDelay = i >= 5 ? Math.max(0, (i - 5) * 100) : 0;
+              return (
+                <ProjectCard goToWebsite={goToWebsite} visibleProject={visibleProject} key={i} transitionDelay={transitionDelay} />
+              )
+            })}
         </ul>
         <div className={style["projects__button"]}>
           <Button text={allProjectsVisible ? "Show Less" : "Show More"} onClick={toggleProjects} />

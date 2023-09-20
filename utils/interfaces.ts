@@ -76,6 +76,7 @@ export interface Project {
 export interface ProjectProps {
   goToWebsite: (visibleProject: Project) => void;
   visibleProject: Project;
+  transitionDelay: number;
 }
 
 export interface ResizerProps {
