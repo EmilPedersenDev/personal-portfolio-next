@@ -3,7 +3,7 @@
   top: 2.2rem;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--white);
+  background-color: var(--primary-text-color);
   border-radius: 0.125rem;
   z-index: 1;
   width: 100vw;
@@ -27,13 +27,13 @@
       top: -0.125rem;
       left: 50%;
       transform: translateX(-50%) rotate(135deg);
-      background-color: var(--white);
+      background-color: var(--primary-text-color);
       width: 0.3125rem;
       height: 0.3125rem;
     }
 
     .tooltip__text {
-      color: #000;
+      color: var(--secondary-text-color);
       font-size: 0.75rem;
       letter-spacing: 1.2px;
       line-height: normal;

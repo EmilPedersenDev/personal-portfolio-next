@@ -1,18 +1,28 @@
 import Image from "next/image";
 import gengar from "../public/images/gengar.svg";
+import gengarPurple from "../public/images/gengar-purple.svg";
 import profile from "../public/images/profil.jpg";
 import fish from "../public/images/fish.png";
+import fishPurple from "../public/images/fish-purple.png";
 import { techniques } from "../utils/data";
 import ObservableSection from "../components/observable-section";
 import style from "../styles/__about.module.scss";
+import { useTheme } from "next-themes";
+import {useMemo} from "react";
 
 const About = () => {
+  const { theme } = useTheme();
+
+  const isDarkTheme: boolean = useMemo((): boolean => {
+    return theme === "dark";
+  }, [theme]);
+
   return (
     <ObservableSection id="about" class={style.about} transitionClass={style["is-visible"]}>
       <div className={style["about__personal"]}>
         <div className={style["about__info"]}>
-          <div className={`${style["about-image-container"]} ${style.gengar}`}>
-            <Image src={gengar} alt="Gengar" width={200} height={200} layout="intrinsic" quality={100} />
+          <div className={`${style["about-image-container"]} ${style.gengar} ${!isDarkTheme ? style["gengar--light"] : ''}`}>
+            <Image src={isDarkTheme ? gengar : gengarPurple} alt="Gengar" width={200} height={200} layout="intrinsic" quality={100} />
           </div>
           <div className={style["about__profile"]}>
             <h2 className={`section-header ${style["about__header"]}`}>Who am I</h2>
@@ -40,8 +50,8 @@ const About = () => {
               ))}
             </div>
           </div>
-          <div className={`${style["about-image-container"]} ${style["fish"]}`}>
-            <Image src={fish} alt="Fish" width={300} height={300} layout="intrinsic" quality={100} />
+          <div className={`${style["about-image-container"]} ${style["fish"]} ${!isDarkTheme ? style["fish--light"] : ''}`}>
+            <Image src={isDarkTheme ? fish : fishPurple} alt="Fish" width={300} height={300} layout="intrinsic" quality={100} />
           </div>
         </div>
       </div>
