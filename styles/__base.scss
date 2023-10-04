@@ -64,7 +64,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--white);
+  color: var(--primary-text-color);
   letter-spacing: 0.125rem;
   font-weight: 200;
 }
@@ -99,7 +99,7 @@ p,
 span,
 a,
 button {
-  color: var(--white);
+  color: var(--primary-text-color);
   line-height: 1;
   letter-spacing: 0.125rem;
   font-size: 0.8125rem;
@@ -143,7 +143,7 @@ i.icon {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  color: var(--white);
+  color: var(--primary-text-color);
 }
 
 .Typewriter {

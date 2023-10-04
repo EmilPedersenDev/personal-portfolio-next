@@ -6,7 +6,7 @@
   height: 100%;
 
   .distortion__glitch {
-    color: var(--white);
+    color: var(--primary-text-color);
     font-family: var(--font-family);
     font-weight: 800;
     position: relative;
@@ -21,7 +21,7 @@
   .distortion__glitch::before,
   .distortion__glitch::after {
     padding: 0;
-    color: var(--white);
+    color: var(--primary-text-color);
     content: attr(data-text);
     position: absolute;
     width: 100%;
@@ -33,7 +33,7 @@
 
   .distortion__glitch::before {
     left: 0.1875rem;
-    text-shadow: -0.125rem 0 red;
+    text-shadow: -0.125rem 0 var(--distortion-text-shadow);
     animation-name: distortion__glitch-animation-1;
     animation-duration: 2s;
     animation-timing-function: linear;
@@ -44,7 +44,7 @@
 
   .distortion__glitch::after {
     left: -0.1875rem;
-    text-shadow: -0.125rem 0 blue;
+    text-shadow: -0.125rem 0 var(--distortion-text-shadow);
     animation-name: glitch-animation-2;
     animation-duration: 2s;
     animation-timing-function: linear;

@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--main-background);
+  background-color: var(--nav-background);
   z-index: 3;
   position: fixed;
   visibility: hidden;
@@ -41,6 +41,12 @@
   }
 
   .right-nav {
+    @include respond-below(s) {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
     a {
       &::after {
         content: "";
@@ -73,6 +79,7 @@
       li {
         &:not(:last-child) {
           padding-right: 1.5rem;
+          display: flex;
         }
       }
     }
@@ -94,7 +101,7 @@
         width: 1.25rem;
         height: 0.125rem;
         border-radius: 0.3125rem;
-        background: var(--white);
+        background: var(--primary-text-color);
         box-shadow: 0 0.125rem 0.3125rem rgba(255, 101, 47, 0.2);
         @include simpleTransition();
 
@@ -112,7 +119,7 @@
           position: absolute;
           width: 1.875rem;
           height: 0.125rem;
-          background: var(--white);
+          background: var(--primary-text-color);
           border-radius: 0.3125rem;
           @include simpleTransition();
           box-shadow: 0 0.125rem 0.3125rem rgba(255, 101, 47, 0.2);
@@ -131,16 +138,30 @@
           background: transparent;
           box-shadow: none;
           &::before {
-            background: var(--white) !important;
+            background: var(--primary-text-color) !important;
             transform: rotate(45deg) translate(2.1875rem, -2.1875rem);
           }
           &::after {
-            background: var(--white) !important;
+            background: var(--primary-text-color) !important;
             transform: rotate(-45deg) translate(2.1875rem, 2.1875rem);
           }
         }
       }
     }
+
+      .theme-toggle__btn {
+        &:focus {
+          outline: none;
+        }
+
+        &.theme-toggle__btn--mobile {
+          display: none;
+
+          @include respond-below(s) {
+            display: block;
+          }
+        }
+      }
   }
 
   .mobile-nav-overlay {
@@ -154,7 +175,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--secondary-background);
+    background-color: var(--mobile-overlay-background);
     z-index: 1;
     overflow: hidden;
     transform: translateX(100vw);

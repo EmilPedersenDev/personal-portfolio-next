@@ -3,22 +3,31 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "../components/button";
 import Socials from "../components/socials";
-import appLogo from "../public/images/ep-logo-white.png";
+import appLogoWhite from "../public/images/ep-logo-white.png";
+import appLogoBlack from "../public/images/ep-logo-black.png";
 import useWindowScroll from "../utils/scroll";
 import { mobileWidth } from "../utils/variables";
 import { WindowContext } from "../components/resizer";
+import { useTheme } from "next-themes";
 import style from "../styles/__navbar.module.scss";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const Navbar = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const windowWidth = useContext(WindowContext);
+  const [isDarkMode, setIsDarkMode] = useState((): boolean => true);
+  const windowWidth: number = useContext(WindowContext);
   const navbarVisible: boolean = useWindowScroll();
+  const { theme, setTheme } = useTheme();
 
   useEffect((): void => {
     if (windowWidth > mobileWidth) {
       setMobileNavOpen(false);
     }
   }, [windowWidth]);
+
+  useEffect((): void => {
+    isDarkMode ? setTheme('dark'): setTheme("light")
+  }, [isDarkMode])
 
   // If mobile nav is open, then toggle the body elements
   // overflow Y
@@ -53,18 +62,30 @@ const Navbar = () => {
     window.open("https://www.linkedin.com/in/emil-pedersen-6320ab124/", "_blank");
   };
 
+  const toggleTheme = (isDarkMode: boolean): void => {
+    setIsDarkMode(isDarkMode)
+  }
+
   return (
     <header>
       <nav id={style.nav} className={navBarClass}>
         <div className={style["left-nav"]}>
           <Link href="/">
             <a>
-              <Image src={appLogo} alt="App logo" width={30} height={37} quality={100} />
+              <Image src={theme === "dark" ? appLogoWhite : appLogoBlack} alt="App logo" width={30} height={37} quality={100} />
             </a>
           </Link>
         </div>
         <div className={style["right-nav"]}>
           <ul className={style["desktop-nav"]}>
+            <li className={style["theme-toggle"]}>
+              <DarkModeToggle
+                  className={`${style["theme-toggle__btn"]} ${style["theme-toggle__btn--desktop"]}`}
+                  onChange={toggleTheme}
+                  checked={isDarkMode}
+                  size={50}
+              />
+            </li>
             <li>
               <a href="#about">About</a>
             </li>
@@ -81,6 +102,12 @@ const Navbar = () => {
               <Button text="Resume" onClick={showResume} />
             </li>
           </ul>
+          <DarkModeToggle
+              className={`${style["theme-toggle__btn"]} ${style["theme-toggle__btn--mobile"]}`}
+              onChange={toggleTheme}
+              checked={isDarkMode}
+              size={50}
+          />
           <div className={style["mobile-nav"]} onClick={onToggleMobileNav}>
             <div className={`${style["mobile-nav__hamburger"]} ${mobileNavOpen && style.open}`} />
           </div>

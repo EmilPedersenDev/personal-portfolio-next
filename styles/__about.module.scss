@@ -69,6 +69,10 @@
         left: -20%;
         transform: translate(-30%, -20%);
 
+        &.fish--light {
+          opacity: 0.18;
+        }
+
         @include respond-above(s) {
           display: block;
         }
@@ -80,6 +84,10 @@
         right: 50%;
         transform: translate(50%, 50%);
         opacity: 0.03;
+
+        &.gengar--light {
+          opacity: 0.15;
+        }
 
         @include respond-above(s) {
           bottom: -3.75rem;

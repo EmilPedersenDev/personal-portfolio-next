@@ -8,11 +8,29 @@
   --font-family: "PT Sans", sans-serif;
   --link-hover-color: rgba(255, 255, 255, 0.12);
   --main-background: #121212;
+  --nav-background: var(--main-background);
   --max-width-left-placement: 43.75rem;
   --primary: #bb86fc;
   --secondary-background: #292929;
   --secondary: #64ffda;
   --secondary-active: rgba(100, 255, 218, 0.1);
+  --mobile-overlay-background: var(--secondary-background);
   --shrinking-font-size: clamp(1.5rem, 7vw, 2.5rem);
-  --white: #fff;
+  --primary-text-color: #fff;
+  --secondary-text-color: var(--black);
+  --distortion-text-shadow: red;
+}
+
+html.light{
+  --main-background: #f8f8f8;
+  --primary-text-color: #011e1a;
+  --nav-background: #fff;
+  --secondary: #8147E5;
+  --distortion-text-shadow: var(--secondary);
+  --secondary-active: rgba(129, 71, 229, 0.09);
+  --secondary-background: var(--secondary-active);
+  --border-color: var(--nav-background);
+  --box-shadow: rgba(45, 45, 45, 0.2) 0px 0px 4px 1px;
+  --secondary-text-color: var(--nav-background);
+  --mobile-overlay-background: var(--main-background);
 }

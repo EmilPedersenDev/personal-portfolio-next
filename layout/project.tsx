@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { ProjectProps } from "../utils/interfaces";
 import style from "../styles/__project.module.scss";
-import {MouseEvent, useEffect, useState} from "react";
+import {MouseEvent, useEffect, useMemo, useState} from "react";
 import Tooltip from "../components/tooltip";
+import {useTheme} from "next-themes";
 
 
 const Project = ({ goToWebsite, visibleProject, transitionDelay }: ProjectProps) => {
@@ -10,9 +11,15 @@ const Project = ({ goToWebsite, visibleProject, transitionDelay }: ProjectProps)
     const [showTooltip, setShowTooltip] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
 
+    const { theme } = useTheme();
+
     useEffect((): void => {
         setIsVisible(true);
     }, [])
+
+    const isDarkTheme: boolean = useMemo((): boolean => {
+        return theme === "dark";
+    }, [theme]);
 
   const onAnchorClick = (e: MouseEvent<HTMLAnchorElement>): void => {
     e.stopPropagation();
@@ -46,7 +53,7 @@ const Project = ({ goToWebsite, visibleProject, transitionDelay }: ProjectProps)
                       text="There is unfortunately no link to the resource at this moment"
                   />
           </div>
-        <Image src="/icons/code.svg" height={16} width={16} quality={100} alt="code icon" />
+        <Image src={isDarkTheme ? "/icons/code.svg" : "/icons/code-purple.svg"} height={16} width={16} quality={100} alt="code icon" />
       </div>
       <div className={style["projects-item__body"]}>
         <p>{visibleProject.description}</p>
@@ -69,7 +76,7 @@ const Project = ({ goToWebsite, visibleProject, transitionDelay }: ProjectProps)
               rel="noreferrer"
               aria-label="website link"
             >
-              <Image src="/icons/link.svg" height={14} width={14} quality={100} alt="link icon" />
+              <Image src={isDarkTheme ? "/icons/link.svg" : "/icons/link-purple.svg"} height={14} width={14} quality={100} alt="link icon" />
             </a>
           </div>
         )}
@@ -82,7 +89,7 @@ const Project = ({ goToWebsite, visibleProject, transitionDelay }: ProjectProps)
               rel="noreferrer"
               aria-label="github link"
             >
-              <Image src="/icons/github.svg" height={16} width={16} quality={100} alt="linkedin icon" />
+              <Image src={isDarkTheme ? "/icons/github.svg" : "/icons/github-purple.svg"} height={16} width={16} quality={100} alt="linkedin icon" />
             </a>
           </div>
         )}
