@@ -6,7 +6,6 @@ import "../styles/__base.scss";
 import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
-    console.log(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID)
   return (
     <div id="app">
         <Script id="google-analytics">
