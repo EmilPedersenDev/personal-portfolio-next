@@ -22,7 +22,6 @@ const Navbar = () => {
     const router = useRouter()
 
     useEffect((): void => {
-        console.log(router)
         if (windowWidth > mobileWidth) {
             setMobileNavOpen(false);
         }
