@@ -19,6 +19,8 @@
   --primary-text-color: #fff;
   --secondary-text-color: var(--black);
   --distortion-text-shadow: red;
+  --scrollbar-color: rgba(100, 255, 218, 0.5);
+  --cookie-banner-background: var(--black);
 }
 
 html.light{
@@ -33,4 +35,6 @@ html.light{
   --box-shadow: rgba(45, 45, 45, 0.2) 0px 0px 4px 1px;
   --secondary-text-color: var(--nav-background);
   --mobile-overlay-background: var(--main-background);
+  --scrollbar-color: rgba(129, 71, 229, 0.5);
+  --cookie-banner-background: var(--nav-background);
 }

@@ -15,7 +15,7 @@
     background-color: var(--main-background);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: var(--secondary-background);
+    background-color: var(--scrollbar-color);
     border: 0.1875rem solid var(--main-background);
     border-radius: 0.625rem;
 
@@ -130,6 +130,16 @@ a {
   text-decoration: none;
   position: relative;
   display: block;
+
+  &.secondary-link {
+      display: inline;
+      text-decoration: underline;
+      transition: all ease 0.3s;
+
+      &:hover {
+        color: var(--secondary);
+      }
+  }
 }
 
 li {
