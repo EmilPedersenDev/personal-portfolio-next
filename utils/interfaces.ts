@@ -5,6 +5,8 @@ export interface ButtonProps {
   size?: string;
   type?: string;
   disabled?: boolean;
+  color?: string;
+  border?: boolean;
   onClick?: () => void;
 }
 
