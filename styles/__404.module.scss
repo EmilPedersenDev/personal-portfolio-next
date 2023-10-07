@@ -1,0 +1,93 @@
+#notfound {
+  position: relative;
+  height: 100vh;
+
+  .notfound {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 32.5rem;
+    width: 100%;
+    line-height: 1.4;
+    text-align: center;
+
+    .notfound-404 {
+      position: relative;
+      height: 12.5rem;
+      margin: 0 auto 1.25rem;
+      z-index: -1;
+
+      @media (max-width: 480px) {
+        height: 9.25rem;
+        margin: 0 auto 0.625rem;
+      }
+
+      h1 {
+        font-size: 14.75rem;
+        font-weight: 200;
+        margin: 0;
+        color: var(--primary-text-color);
+        text-transform: uppercase;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        @media (max-width: 767px) {
+          font-size: 9.25rem;
+          position: relative;
+          transform: none;
+          left: unset;
+          top: unset;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 5.375rem;
+        }
+      }
+
+      h2 {
+        font-size: 1.75rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: var(--secondary-text-color);
+        background: var(--primary-text-color);
+        padding: 0.625rem 0.3125rem;
+        margin: auto;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        @media (max-width: 767px) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    a {
+      display: inline-block;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--secondary-text-color);
+      text-transform: uppercase;
+      padding: 0.8125rem 1.4375rem;
+      background: var(--scrollbar-color);
+      font-size: 1.125rem;
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+
+      @media (max-width: 480px) {
+        padding: 0.75rem 0.9375rem;
+        font-size: 0.875rem;
+      }
+
+      &:hover {
+        color: var(--primary-text-color);
+        background: var(--secondary-active);
+      }
+    }
+  }
+}
